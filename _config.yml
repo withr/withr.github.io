@@ -9,7 +9,7 @@ name: Huidong Tian
 description: IT advisor, R and Raspberry Pi fan.
 
 # URL of your avatar or profile pic (you could use your GitHub profile pic)
-avatar: images/about.jpg
+avatar: https://raw.githubusercontent.com/barryclark/jekyll-now/master/images/jekyll-logo.png
 
 #
 # Flags below are optional
