@@ -6,9 +6,6 @@ comments: true
 categories: RPi
 ---
 
-I added this line online
-
-
 [Raspberry Pi](http://www.raspberrypi.org/) is a credit-card sized (not the thickness) Linux computer. Besides its small size, it has GPIO pins allow you to control other electrical devices, like motors, servo, sensors, LED, etc. I felt in love with Raspberry Pi (RPi) in summer of 2014: as an IT advisor, the childhood dream of making robot could come true! In this blog, I will show how to get access to RPi without screen. 
 
 To go through this tutorial, you need the following devices get ready:
