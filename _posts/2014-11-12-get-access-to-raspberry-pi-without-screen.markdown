@@ -22,11 +22,13 @@ To go through this tutorial, you need the following devices get ready:
 ### Get access to RPi via an Ethernet cable
 
 - Download the zipped [Raspbian](http://downloads.raspberrypi.org/raspbian_latest) image and unzip it. The unzipped image's size is about 3GB.
-{% img center /images/raspbian_logo.png "" %}
+
+
 
 - Burn the unzipped image into the micro SD card of Raspberry Pi. Following the official [instruction](http://www.raspberrypi.org/documentation/installation/installing-images/README.md) to burn image to your SD card. If you use Mac OS, I suggest you to download an app called [ApplePi-Baker](http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) and install it.  **ApplePi-Baker** is designed for RPi specially. First, insert your SD card to its reader, and connect the reader to your computer. Open ApplePi-Baker app, choose the micro SD card and select the unzipped Raspbian image, then click install. The installation could take up to 5-10 minutes depending on the writing speed of your micro SD card.
 
-{% img center /images/applepi-baker-startup-screen.jpg "" %}
+
+
 
 
 - Keep the SD card reader connected with your computer, and open it. You will find a file called **cmdline.txt** under root directory, open it and add ** ip=192.168.10.100** at the end of the first line, then save it. The IP address should under the same subset (netmask) as your computer. If the local IP address of your computer is **192.168.0.153**, then you may give an IP address like **192.168.0.154**, just make sure there is no other equipment had taken this IP already. You can use **ipconfig** (Win) or **ifconfig** (Mac/Linux) to check your local IP address. The setting of *cmdline.txt* just let your RPi have a default IP which under the same subset as your computer, so your computer can visit it via Ethernet cable directly. 
@@ -139,14 +141,16 @@ The above command will let RPi re-choose network connection using the configurat
 
 On some environment, we want to control RPi remotely. Of course we can use **Router Port Forward** to access RPi from any where in the world. But it's also necessary to control RPi remotely in field, where there is no internet connection! For example, a underwater robot. In water, all popular wireless signals (WiFi, Bluetooth, Radio, etc.) can be weakened in a short distance. My solution is connect RPi with Ethernet cable. Ethernet cable's bandwidth make it possible to transfer large mount of data, like videos. On the other side of the Ethernet cable, we can connect with a computer, just like the methods mentioned above, but it's still not convenient: *I don't want to carry my laptop, it's heavy*. The solution is using a WiFi router with RJ45 port (the last devices list at the beginning). 
 
-{% img center /images/TB2jC1laXXXXXavXXXXXXXXXXXX-117282665.jpg "" %}
+
+
 
 
 
 With the WiFi router connected with RPi through Ethernet cable, start WiFi router. The red led indicator will light, and after several seconds, it blinks and changes to blue blinks every two seconds, then use your smart phone to search the available WiFi router, and choose the one connected with the Ethernet cable. **Note**, the WiFi router's name and password generally come with the device, look for them at device's bottom or from the manual. 
 
 
-{% img center /images/20150122_231816-1.jpg "" %}
+
+
 
 
 After accessing to the aimed WiFi, start the RPi. Because there is Ethernet cable connected, RPi can be accessed through Ethernet card's IP address (192.168.10.100, set as static). 
