@@ -12,7 +12,7 @@ I am a somewhat minimalist R user. I feel uncomfortable if something is not in a
 
 At last, I found one way to deal with such problem: using the native functions **unzip** and **unz** of R. What you need to do is compress all *.txt* files into a *.zip* file. Here is an example: suppose you have compressed all your *.txt* files into a *.zip* file named "TSOC 1961 2010.zip";
 
-``` ruby Read Data From Zip File
+``` ruby 
 ## List all files names inside of a .zip file;
 file_ls <- as.character(unzip("TSOC_1961_2010.zip", list = TRUE)$Name)
 ## Read each .txt file into R;

@@ -10,13 +10,13 @@ categories: R Shiny
 
 Setting up a Shiny-server on [Digital Ocean](http://www.digitalocean.com) is easy, follow this blog you can get your shiny-server work in 10 minutes. 
 
-- **Create a Droplet** 
+###1. Create a Droplet
 First, register an account on [Digital Ocean](http://www.digitalocean.com). Log in and register Billing details, then you are ready to create your first **Droplet** (server). Give your droplet a name, select its size, region, image (I prefer Ubuntu 12.04.4) and then click *Create Droplet*. In one minute, your droplet will be created, and you will receive an email containing the IP address, username and password of your server.
 
 ![]( /images/do-createDroplet-2.png )
 
 
-- **Remote control** 
+###2. Remote control
 Users can access their server using the *Console* of Digital Ocean's webpage, but there are a lot limitation. It's much easy to control your server using local terminal console. Under Windows, I recommend to use **Putty**. Download and install [Putty](http://www.chiark.greenend.org.uk/~sgtatham/Putty/download.html). Open it, set the *IP address* and *Saved Sessions*, then click *Open* to open Putty's console. 
 
 ![]( /images/do-Putty.png )
@@ -27,7 +27,7 @@ Login Putty use the username and password in your email. After log in, please ch
 
 
 
-- **Install R and shiny package**
+###3. Install R and shiny package
 
 For security reason, add R's secure APT key to system:
 
@@ -61,7 +61,7 @@ Install shiny package:
 sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')\""
 ``` 
 
-- **Install Shiny-server**
+###4. Install Shiny-server
 
 ``` ruby
 sudo apt-get install gdebi-core
@@ -74,7 +74,7 @@ If anything is OK, you can now access your shiny-server by typing your server's 
 
 ![]( /images/do-shiny-server.png )
 
-- **Install RStudio-server**
+###5. Install RStudio-server
 *Putty* is convenient  for remotely control your sever, but not intuitive for documents management. **RStudio-server** is one excellent solution for R project management and file transfer. Use the following commands to install  RStudio server on your droplet:
 
 ``` ruby

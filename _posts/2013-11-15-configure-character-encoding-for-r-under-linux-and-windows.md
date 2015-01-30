@@ -14,7 +14,7 @@ There are thousands of hundrads of characters in this world, like *LatinÆ chara
 
 When encounter garbed text in R, we should first check the encoding type of R.  I will show how to check and setup encoding under Linux and Windows. 
 
-* ### Under Linux 
+###1. Under Linux 
  Under Linux, we start R programe by typing <code>R</code> in terminal (which can be called up by press <code>Ctrl+Alt+T</code>). To check the current encoding, we use the command **Sys.getlocale()**. This command will list the current locale setting, including *LC_CTYPE*, *LC_NUMERIC*, etc. 
 
 ``` ruby
@@ -70,7 +70,7 @@ Save the change and restart the computer, you can check the current locale setti
 
 By default, R will use the locale setting of the operation system. So if we type command **Sys.getlocale()** in R console, the installed locale setting will be displayed. R also has a function for temporary setting of locale: **Sys.setlocale**. If the current locale setting can not show some script correctly, we need to guess which locale is suitable, so we use *Sys.setlocale*. For example, <code>Sys.setlocale(category = "LC_ALL", locale = "zh_CN.utf-8")</code> will change current locale to Chinese (Simplified)_People's Republic of China using character encoding "UTF-8". Note, this changes the locale temporary, when you quit R and restart it again, the locale is still the system's locale. 
 
-* ### Under Windows
+###2. Under Windows
 The configuration of locale under Windows is a bit less concise than under Linux.
 
 We can get the current locale in R using **Sys.getlocale()**.  

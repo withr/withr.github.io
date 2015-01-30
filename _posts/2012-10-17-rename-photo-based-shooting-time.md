@@ -15,7 +15,7 @@ Now, the problem is how to access the header  information of a photo? I didn't f
 
 The following is the R code for renaming photos according to the shooting time in a batch mode. 
 
-``` ruby Rename photo using shooting time
+``` ruby 
 # List all Jpeg photos in a directory,
 # you can try some other image formats, like tiff, etc.
 file.jpg <- list.files(path = "L:/PhotoDirectory/", 

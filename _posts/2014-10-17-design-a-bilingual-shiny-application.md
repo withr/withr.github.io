@@ -6,21 +6,20 @@ comments: true
 categories: R Shiny
 ---
 
-It's a common requirement that your *Shiny* application should be bilingual. I have tried several methods and finally I got one which is not so difficult to maintain. 
+It's a common requirement that your *Shiny* application should be **bilingual**. I have tried several methods and finally I got one which is not so difficult to maintain. 
 
 My idea is: 
 
 - Create a bilingual dictionary or a lookup table which contains three columns: *value*, *English name* and *Norwegian name*, like this one: 
 
-``` ruby
+{% highlight R %}
 value EN    NO
+----------------
 time  Time  Tid
 day   Day   Dag
 week  Week  Uke
 month Month Måned
-
-``` 
-
+{% endhighlight %}
 
 - Create a radio input with *English* and *Norsk* two options in file *ui.R*. 
 
@@ -75,7 +74,7 @@ shinyUI(pageWithSidebar(
 
 ``` 
 
-In *server.R* file, we need load the *E2N* function first: 
+In *server.R* file, we need load the **E2N** function first: 
 
 ``` ruby
 shinyServer(function(input, output, session) {

@@ -8,7 +8,7 @@ categories: Phantomjs R
 
 I used to scrape static web pages with the R package *RCurl*. It's a great package! When it comes to dynamic web pages, *RCurl* comes to be difficult to set up (actually, I never get it works). Then I met **[Phantomjs](http://phantomjs.org/)**. *PhantomJS is a headless WebKit scriptable with a JavaScript API. It has fast and native support for various web standards: DOM handling, CSS selector, JSON, Canvas, and SVG.* In this blog, I will show how you to scrape flight tickets data using Phantomjs, extract and filter the entries that meet some restriction, and then send the result to your email automatically. 
 
-- ### Install Phantomjs
+###1. Install Phantomjs
 Run the following command **line-by-line** in your system console.
 
 ``` ruby
@@ -29,7 +29,7 @@ Check if PhantomJS was successfully installed using:
 phantomjs -v
 ``` 
 
-- ### Create the scraping script using Phantomjs
+###2. Create the scraping script using Phantomjs
 
 An example looks like this: 
 
@@ -102,7 +102,7 @@ phantomjs /<directory>/fly.js
 
 If you can see the "success" message in your console, then the scraping work finished, and ticket data in the first page of the searched result will be saved in the file specified in line 50.
 
-- ### Parse the scraped result, select the entries meet your restriction.
+###3. Parse the scraped result, select the entries meet your restriction.
 
 ``` ruby
 setwd("/home/tianhd/Finn")
@@ -147,7 +147,7 @@ Air China 29.08.2014-12.09.2014 4328 12.30 12.25 15:10-09:40 13:50-20:15
 ``` 
 
 
-- ### Send the result as attachment to your email 
+###4. Send the result as attachment to your email 
 
 There is a great R package called **mailR**, which can send the search result as attachment to your email address. This following code will send you an email using your Gmail account.
 
@@ -172,7 +172,7 @@ export LD_LIBRARY_PATH=/usr/lib/jvm/java-6-openjdk-amd64/jre/lib/amd64/server
 R CMD javareconf # Let R know the configuration of Java;
 ```
 
-- ### Schedule the job to run everyday automatically.
+###5. Schedule the job to run everyday automatically.
 
 Use the following command to open the schedule list: 
 

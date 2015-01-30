@@ -13,7 +13,7 @@ I have no knowledge about server load balancer, the following method is ONLY wha
 
 - Then,  create a normal Shiny app to detect which app has little user number than others, and using JavaScript to redirect user to that app. 
 
-- ### CPU information about Shiny-app
+###1. CPU information about Shiny-app
 The following is the R code than generates a data frame containing which Shiny-app are running and the user number of each Shiny-app. 
 
 ``` ruby
@@ -62,7 +62,7 @@ To make it run automatically, schedule it under <code>/etc/crontab</code> like t
 
 ```
 
-- ### Create the Shiny-app for redirecting.
+###2. Create the Shiny-app for redirecting.
 
 **ui.R**
 

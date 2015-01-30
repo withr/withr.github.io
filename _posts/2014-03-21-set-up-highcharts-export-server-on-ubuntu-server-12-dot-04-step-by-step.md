@@ -10,14 +10,13 @@ There are a lot of JavaScript [libraries](http://techslides.com/50-javascript-ch
 
 The tutorial of setting up export server on *Highcharts*'s [website](http://www.highcharts.com/docs/export-module/setting-up-the-server) is really vague, especially to users that have little knowledge about Java and Tomcat-server. I spent two days to get my server work, but I hope you can get it through in 10 minutes by following this tutorial. 
 
-- **Install Java**. The Highcharts export server is an Apache-tomcat based server, which run under Java run environment, so we need to install Java first. And for Highcharts-export server, we need at least version 1.7. Open your terminal, and type the following command: 
+###1. Install Java
+The Highcharts export server is an Apache-tomcat based server, which run under Java run environment, so we need to install Java first. And for Highcharts-export server, we need at least version 1.7. Open your terminal, and type the following command: 
 
 
 ``` ruby
 sudo apt-get install openjdk-7-jdk openjdk-7-jre
 ``` 
-
-
 
 To check whether Java was installed correctly, you can use the command:
  
@@ -34,7 +33,8 @@ sudo nano ~/.bashrc
 After opening the "~/.bashrc" file, use arrow key to navigate to its bottom, type the export command, and press "Ctrl+x" to exist and save the modification. 
 
 
-- **Install Tomcat7**. You can call Tomcat as the server, because it hosts the *highcharts-export-web* module which will be used for converting charts to images. 
+###2. Install Tomcat7
+You can call Tomcat as the server, because it hosts the *highcharts-export-web* module which will be used for converting charts to images. 
 
 ``` ruby
 sudo apt-get install tomcat7
@@ -51,7 +51,7 @@ If you can see the message: * Starting Tomcat servlet engine tomcat7   [OK]*, th
 
 
 
-- **Install Maven**.   
+###3. Install Maven
 
 ``` ruby
 sudo apt-get update
@@ -64,7 +64,7 @@ Check if Maven was successfully installed using:
 mvn -version
 ``` 
 
-- **Install PhantomJS**.
+###4. Install PhantomJS
 
 ``` ruby
 sudo apt-get remove phantomjs
@@ -84,7 +84,8 @@ Check if PhantomJS was successfully installed using:
 phantomjs -v
 ``` 
 
-- **Compile file "highcharts-export-web.war" using Maven**. Go to Highcharts' github repository [highcharts.com](https://github.com/highslide-software/highcharts.com), and click the *Download ZIP* at the right-bottom corner. Unzip the download file, you can find the "highcharts-export" folder under "highcharts.com-master\exporting-server\java", copy it to a convenient place. For example, 
+###5. Compile file "highcharts-export-web.war" using Maven
+Go to Highcharts' github repository [highcharts.com](https://github.com/highslide-software/highcharts.com), and click the *Download ZIP* at the right-bottom corner. Unzip the download file, you can find the "highcharts-export" folder under "highcharts.com-master\exporting-server\java", copy it to a convenient place. For example, 
 
 ``` ruby
 sudo cp -R theFolderDirectory /home/local/../highcharts-export/
