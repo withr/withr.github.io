@@ -19,7 +19,7 @@ To go through this tutorial, you need the following devices get ready:
 
 
 
-### Get access to RPi via an Ethernet cable
+###1. Get access to RPi via an Ethernet cable
 
 - Download the zipped [Raspbian](http://downloads.raspberrypi.org/raspbian_latest) image and unzip it. The unzipped image's size is about 3GB.
 ![]( /images/raspbian_logo.png )
@@ -40,7 +40,7 @@ To go through this tutorial, you need the following devices get ready:
 One shortcoming of this method is: **your RPi has no connection with internet!**
  
  
-### Let your RPi visit internet through WiFi
+###2. Let your RPi visit internet through WiFi
 
 I highly recommend you to get a USB WiFi adapter ready for your RPi, it's really neccessary and convenient. However, not all USB WiFi adapters are suitable, we need a **No Driver Needed** WiFi USB adapter (listed on above). 
 
@@ -114,7 +114,7 @@ Now, we can access the RPi via Ethernet cable and let RPi visit internet through
 This method also apply to a mobile **hotspot**, what you need to modify is just the *wpa-ssid* and *wpa-psk* to your hotspot's name and password. 
 
 
-### Access RPi via WiFi or Ethernet cable.
+###3. Access RPi via WiFi or Ethernet cable.
 
 Until now, we can access RPi through Ethernet cable only! If we want to access RPi through WiFi, we can delete the " ip=192.168.10.100" in *cmdline.txt*, reboot RPi without Ethernet cable connected. When RPi starts, after a while the WiFi adapter start to work, and we can access RPi through WiFi. We can also acess RPi from our smart phone (WiFi should be opened and connected to the same WiFi router) use SSH app, like **[juiceSSH](https://juicessh.com/)**.
 
@@ -135,16 +135,16 @@ sudo /etc/init.d/networking restart
 
 The above command will let RPi re-choose network connection using the configuration of */etc/network/interfaces*. By default, RPi will search Ethernet connection first, if there are Ethernet connection, then use it, otherwise try WiFi connection. So, if the Ethernet cable was connected, then we can access RPi via Ethernet cable, if there is no Ethernet cable connected, then RPi will search for WiFi connection, if there are WiFi connection, then we can access RPi through WiFi.
 
-### Access RPi via Ethernet cable and WiFi
+###4. Access RPi via Ethernet cable and WiFi
 
 On some environment, we want to control RPi remotely. Of course we can use **Router Port Forward** to access RPi from any where in the world. But it's also necessary to control RPi remotely in field, where there is no internet connection! For example, a underwater robot. In water, all popular wireless signals (WiFi, Bluetooth, Radio, etc.) can be weakened in a short distance. My solution is connect RPi with Ethernet cable. Ethernet cable's bandwidth make it possible to transfer large mount of data, like videos. On the other side of the Ethernet cable, we can connect with a computer, just like the methods mentioned above, but it's still not convenient: *I don't want to carry my laptop, it's heavy*. The solution is using a WiFi router with RJ45 port (the last devices list at the beginning). 
 
 ![]( /images/ZTE_AR350.jpg )
 
 
-
 With the WiFi router connected with RPi through Ethernet cable, start WiFi router. The red led indicator will light, and after several seconds, it blinks and changes to blue blinks every two seconds, then use your smart phone to search the available WiFi router, and choose the one connected with the Ethernet cable. **Note**, the WiFi router's name and password generally come with the device, look for them at device's bottom or from the manual. 
 
+![]( /images/RPi_Ethernet_WiFi.jpg )
 
 
 After accessing to the aimed WiFi, start the RPi. Because there is Ethernet cable connected, RPi can be accessed through Ethernet card's IP address (192.168.10.100, set as static). 
