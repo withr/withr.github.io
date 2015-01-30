@@ -22,7 +22,7 @@ To go through this tutorial, you need the following devices get ready:
 ###1. Get access to RPi via an Ethernet cable
 
 - Download the zipped [Raspbian](http://downloads.raspberrypi.org/raspbian_latest) image and unzip it. The unzipped image's size is about 3GB.
-![]( /images/raspbian_logo.png )
+
 
 - Burn the unzipped image into the micro SD card of Raspberry Pi. Following the official [instruction](http://www.raspberrypi.org/documentation/installation/installing-images/README.md) to burn image to your SD card. If you use Mac OS, I suggest you to download an app called [ApplePi-Baker](http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) and install it.  **ApplePi-Baker** is designed for RPi specially. First, insert your SD card to its reader, and connect the reader to your computer. Open ApplePi-Baker app, choose the micro SD card and select the unzipped Raspbian image, then click install. The installation could take up to 5-10 minutes depending on the writing speed of your micro SD card.
 
@@ -46,45 +46,45 @@ I highly recommend you to get a USB WiFi adapter ready for your RPi, it's really
 
 - First, let's check which devices were connected with RPi before we inserting the WiFi USB adapter.
 
-``` ruby
+{% highlight sh %}
 lsusb
-```
+{% endhighlight %}
 
 - Then, insert the  USB WiFi adapter into a USB port, and check the USB devices again (RPi may need several seconds to recognize it).
 
-``` ruby
+{% highlight sh %}
 lsusb
-```
+{% endhighlight %}
 
 The new line, indicated the connected WiFi USB adapter. We can use the following command to check if the kernal of current RPi has support moduler for our WiFi USB adapter.
 
-``` ruby
+{% highlight sh %}
 lsmod
-```
+{% endhighlight %}
 
 - Now let's check the connection of the USB WiFi adapter.
 
-``` ruby
+{% highlight sh %}
 ifconfig
-```
+{% endhighlight %}
 
 We can see that RPi has a **wlan0** device, but without IP address, that's because the WiFi adapter hasn't connected to your WiFi router. 
 
 - Scan available WiFi signals.
 
-``` ruby
+{% highlight sh %}
 sudo iwlist wlan0 scan | grep "ESSID"
-```
+{% endhighlight %}
 
 If you can see your WiFi in the list, then we move to next step to set the WiFi connection.
 
-``` ruby
+{% highlight sh %}
 sudo nano /etc/network/interfaces
-``` 
+{% endhighlight %}
 
 Modify the context for wlan0 as the following: 
   
-``` ruby
+{% highlight sh %}
 auto lo
 iface lo inet loopback
 
@@ -92,22 +92,22 @@ auto wlan0
 iface wlan0 inet dhcp
 wpa-ssid "WiFi name"
 wpa-psk "password"
-``` 
+{% endhighlight %}
 
 
 where the "WiFi name" is the name of your WiFi, and "password" is the password to your WiFi.
 
 Then, use the following command to re-config the network connection of your RPi: 
   
-```
+{% highlight sh %}
 sudo /etc/init.d/networking restart
-```
+{% endhighlight %}
 
 now use <code>ifconfig</code> to check if device wlan0 now has IP address, if yes, then your RPi has connected to internet already.  You can use <code>ping</code> to test web connection, like: 
 
-```
+{% highlight sh %}
 ping www.google.com
-```
+{% endhighlight %}
 
 Now, we can access the RPi via Ethernet cable and let RPi visit internet through USB WiFi adapter. Note, we can only access RPi via Ethernet cable because we added " ip=192.168.10.100" to **cmdline.txt** in the boot directory of RPi. Every time the RPi start, it  sets its accessing IP address as "192.168.10.100".
 
@@ -120,18 +120,18 @@ Until now, we can access RPi through Ethernet cable only! If we want to access R
 
 Due to the IP address in *cmdline.txt* has been deleted, we can't access RPi through Ethernet cable directly any more. To enable the access via Ethernet cable, we just need to add the following lines to */etc/network/interfaces*: 
 
-```
+{% highlight sh %}
 iface inet eth0 static
   address 192.168.10.100
   netmask 255.255.255.0
   gatewat 192.168.10.1
-```
+{% endhighlight %}
 
 Now, connect RPi and computer with Ethernet cable, reboot RPi or run the following command to re-config RPi's networking:
 
-```
+{% highlight sh %}
 sudo /etc/init.d/networking restart
-```
+{% endhighlight %}
 
 The above command will let RPi re-choose network connection using the configuration of */etc/network/interfaces*. By default, RPi will search Ethernet connection first, if there are Ethernet connection, then use it, otherwise try WiFi connection. So, if the Ethernet cable was connected, then we can access RPi via Ethernet cable, if there is no Ethernet cable connected, then RPi will search for WiFi connection, if there are WiFi connection, then we can access RPi through WiFi.
 
