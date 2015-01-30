@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Get Access to Raspberry Pi"
+title: "Get Access to Raspberry Pi without Screen"
 date: 2014-11-12 16:32
 comments: true
 categories: RPi
