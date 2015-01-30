@@ -147,7 +147,11 @@ With the WiFi router connected with RPi through Ethernet cable, start WiFi route
 ![]( /images/RPi_Ethernet_WiFi.jpg )
 
 
-After accessing to the aimed WiFi, start the RPi. Because there is Ethernet cable connected, RPi can be accessed through Ethernet card's IP address (192.168.10.100, set as static). 
+After accessing to the aimed WiFi, start the RPi. Because there is Ethernet cable connected, RPi can be accessed through Ethernet card's IP address (192.168.10.100, set as static). If you want to connect RPi through WiFi, you can run this command: 
+
+{% highlight sh %}
+sudo /etc/init.d/networking restart
+{% endhighlight %}
 
 
 
