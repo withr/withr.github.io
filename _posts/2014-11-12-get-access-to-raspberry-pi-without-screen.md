@@ -26,7 +26,7 @@ To go through this tutorial, you need the following devices get ready:
 
 - Burn the unzipped image into the micro SD card of Raspberry Pi. Following the official [instruction](http://www.raspberrypi.org/documentation/installation/installing-images/README.md) to burn image to your SD card. If you use Mac OS, I suggest you to download an app called [ApplePi-Baker](http://www.tweaking4all.com/hardware/raspberry-pi/macosx-apple-pi-baker/) and install it.  **ApplePi-Baker** is designed for RPi specially. First, insert your SD card to its reader, and connect the reader to your computer. Open ApplePi-Baker app, choose the micro SD card and select the unzipped Raspbian image, then click install. The installation could take up to 5-10 minutes depending on the writing speed of your micro SD card.
 
-![]( /images/ApplePi_baker.jpg )
+![]( /images/ApplePi_Baker.jpg )
 
 
 - Keep the SD card reader connected with your computer, and open it. You will find a file called **cmdline.txt** under root directory, open it and add **ip=192.168.10.100** at the end of the first line, then save it. The IP address should under the same subset (netmask) as your computer. If the local IP address of your computer is **192.168.0.153**, then you may give an IP address like **192.168.0.154**, just make sure there is no other equipment had taken this IP already. You can use **ipconfig** (Win) or **ifconfig** (Mac/Linux) to check your local IP address. The setting of *cmdline.txt* lets your RPi have a default IP which under the same subset as your computer, so your computer can visit it via Ethernet cable directly. 
@@ -36,6 +36,7 @@ To go through this tutorial, you need the following devices get ready:
 
 - Now open a SSH software to get access to RPi. If you are using Mac OS, you can use **Terminal -> Shell -> New Remote Connection -> Secure Shell (ssh)** which come with the system, if you are using Windows, you can use  **[putty](http://www.chiark.greenend.org.uk/~sgtatham/putty/download.html)**.  Before we start to access to RPi, we need to turn off the WiFi of our computer, because the RPi is now connected with our computer through Ethernet cable, not WiFi. Once connected with RPi, we can turn the WiFi of your computer on, so you can both control RPi and browse internet. Note, you may need to wait a little while.
 
+![]( /images/Teminal_remote_connection.png )
 
 One shortcoming of this method is: **your RPi has no connection with internet!**
  
@@ -74,7 +75,9 @@ We can see that RPi has a **wlan0** device, but without IP address, that's becau
 sudo iwlist wlan0 scan | grep "ESSID"
 {% endhighlight %}
 
-If you can see your WiFi in the list, then we move to next step to set the WiFi connection.
+![]( /images/wifi_scan.jpg )
+
+If you can see your WiFi in the list, then move to next step to set the WiFi connection.
 
 {% highlight sh %}
 sudo nano /etc/network/interfaces
@@ -102,11 +105,13 @@ Then, run the following command to re-config RPi's network connection:
 sudo /etc/init.d/networking restart
 {% endhighlight %}
 
-now use <code>ifconfig</code> to check if device wlan0 now has IP address, if yes, then your RPi has connected to internet already.  You can use <code>ping</code> to test web connection, like: 
+now use *ifconfig* to check if device **wlan0** now has IP address, if yes, then your RPi has connected to internet already.  You can use *ping* to test web connection, like: 
 
 {% highlight sh %}
 ping www.google.com
 {% endhighlight %}
+
+![]( /images/ifconfig_ip.jpg )
 
 Now, we can access the RPi via Ethernet cable and let RPi visit internet through USB WiFi adapter. Note, we can only access RPi via Ethernet cable because we added **ip=192.168.10.100** to **cmdline.txt** in the boot directory of RPi. Every time the RPi start, it sets its IP address as **192.168.10.100**.
 
@@ -155,13 +160,15 @@ With the WiFi router connected with RPi through Ethernet cable, start WiFi route
 After accessing to the aimed WiFi, start or reboot RPi. Because there is Ethernet cable connected, RPi can be accessed through Ethernet card's IP address (192.168.10.100, set as static). Note, this will take some time!
 
 
-Now, if we want to connect RPi through WiFi (with WiFi router connected to RPi via Ethernet cable), we should log onto the WiFi (which USB WiFi adapter logged on) first, then can run this command: 
+Now, if we want to connect RPi through WiFi (with WiFi router connected to RPi via Ethernet cable), we should run the following command first: 
+
+
 
 {% highlight sh %}
 sudo /etc/init.d/networking restart
 {% endhighlight %}
 
-After a while, we can access RPi throught WiFi.
+Then log onto the WiFi router (which USB WiFi adapter logged on). After a while, we can access RPi throught USB WiFi adapter.
 
 
 
