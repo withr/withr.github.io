@@ -9,7 +9,6 @@ categories: RPi
 
 To go through this tutorial, you need the following devices get ready:
 
-- Computer (I use iMac) 
 - [Raspberry Pi B+ (including micro SD card)](http://www.ebay.com/itm/New-Raspberry-Pi-512MB-Model-B-B-Plus-Project-Board-Linux-System-Version-3-/231332852675?pt=LH_DefaultDomain_0&hash=item35dc8333c3)
 - [Micro SD card reader](http://www.ebay.com/itm/USB-Memory-Card-Reader-Mini-Micro-SD-SDHC-MMC-MS-M2-TF-XD-CF-Mobile-Phone-Multi-/121540020677?pt=UK_Photography_MemoryCardReaders_RL&hash=item1c4c5989c5)
 - [DC Power with output 5V2A through micro USB cable](http://www.ebay.com/itm/ORIGINAL-XIAOMI-5V-2A-10400mAh-Power-Bank-for-Smartphone-Tablet-Silver-/351195995514?pt=LH_DefaultDomain_0&hash=item51c4e99d7a)
