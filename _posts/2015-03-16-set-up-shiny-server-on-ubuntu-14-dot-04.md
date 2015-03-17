@@ -17,6 +17,7 @@ This progress was conducted by our IT administer, I will not describe the detail
 ## Setup locale 
 
 **Note: This step must be done before installing Shiny Server**
+**Note!! All your documents under your shiny app's folder should have the same encoding as your system, this will solve many bugs. Or if you encount a encoding problem, check your data's encoding type first!**
 
 For detail description about how to set up locale on Linux, please have a look of this [post](http://withr.me/configure-character-encoding-for-r-under-linux-and-windows/). I just show how to install Norwegian locale and set it as the default locale. 
 
