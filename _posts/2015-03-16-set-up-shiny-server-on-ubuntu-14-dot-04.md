@@ -14,51 +14,6 @@ I have set up a Shiny Server on Ubuntu 12.04 in 2013. [Shiny](http://shiny.rstud
 This progress was conducted by our IT administer, I will not describe the detail here. 
 
 
-## Setup locale 
-
-**Note: This step must be done before installing Shiny Server**
-
-**Note!! All your documents under your shiny app's folder should have the same encoding as your system, this will solve many bugs. Or if you encount a encoding problem, check your data's encoding type first!**
-
-For detail description about how to set up locale on Linux, please have a look of this [post](http://withr.me/configure-character-encoding-for-r-under-linux-and-windows/). I just show how to install Norwegian locale and set it as the default locale. 
-
-- Generate Norwegian locale (Bokmål ISO-8859-1).
-
-```
-sudo locale-gen nb_NO
-sudo update-locale
-locale -a
-```
-If you can see **nb_NO.iso88591**, then the Norwegian locale has been generated and installed successfully. 
-
-- Set **nb_NO.iso88591** as the default locale by editing <code>sudo nano /etc/default/locale</code> to: 
-
-```
-LANG="nb_NO.ISO-8859-1"
-LANGUAGE="nb_NO.ISO-8859-1"
-LC_ALL="nb_NO.ISO-8859-1"
-
-```
-
-- Restart the server <code>sudo reboot</code>, and check the locale using <code>locale</code>. It should look like: 
-
-```
-LANG=nb_NO.ISO-8859-1
-LANGUAGE=nb_NO.ISO-8859-1
-LC_CTYPE="nb_NO.ISO-8859-1"
-LC_NUMERIC="nb_NO.ISO-8859-1"
-LC_TIME="nb_NO.ISO-8859-1"
-LC_COLLATE="nb_NO.ISO-8859-1"
-LC_MONETARY="nb_NO.ISO-8859-1"
-LC_MESSAGES="nb_NO.ISO-8859-1"
-LC_PAPER="nb_NO.ISO-8859-1"
-LC_NAME="nb_NO.ISO-8859-1"
-LC_ADDRESS="nb_NO.ISO-8859-1"
-LC_TELEPHONE="nb_NO.ISO-8859-1"
-LC_MEASUREMENT="nb_NO.ISO-8859-1"
-LC_IDENTIFICATION="nb_NO.ISO-8859-1"
-LC_ALL=nb_NO.ISO-8859-1
-```
 ## Install R and shiny package
 
  Open [Shiny Server's installation page](http://www.rstudio.com/products/shiny/shiny-server/), and navigate to [Download Shiny Server](http://www.rstudio.com/products/shiny/download-server/). It said: "Before installing Shiny Server, you'll need to install R and the Shiny package". 
