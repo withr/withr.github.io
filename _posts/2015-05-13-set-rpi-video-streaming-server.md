@@ -47,3 +47,14 @@ python flask-video-streaming/app.py
 
 The shortcoming of this video streaming server is: **it supports only one client!** But, it's fast.
 
+#### By default, flask uses the "index.html" in "flask-video-streaming/templates", we can modify that file to change its appearance. 
+
+```
+<html>
+  <head></head>
+  <body>
+    <img src="{{ url_for('video_feed') }}" style="width:100%;">
+  </body>
+</html>
+
+```
