@@ -11,7 +11,11 @@ I have set up a Shiny Server on Ubuntu 12.04 in 2013. [Shiny](http://shiny.rstud
 
 ## Install Ubuntu 14.04 server. 
 
-This progress was conducted by our IT administer, I will not describe the detail here. 
+This progress was conducted by our IT administer, I will not describe the detail here. Anyway, please update the server:
+
+```
+sudo apt-get update
+```
 
 
 ## Install R and shiny package
@@ -92,6 +96,7 @@ Now, let's check the default library path in R:
 So, "/usr/local/lib/R/site-library" is the first choice (default) of the library paths.
 
 - Install the following R packages:
+
 ```
 install.packages(c('RJDBC', 'XLConnect', 'devtools', 'RJSONIO'))
 require(devtools)
@@ -178,7 +183,7 @@ sudo apt-get install inkscape
 
 ## Shiny package:
 
-- Add the following codes to *bootstrap.min.css* in directory */usr/local/lib/R/site-library/shiny/www/shared/bootstrap/css/*: 
+- Add the following codes to *bootstrap.min.css* (v3.3.1) in directory */usr/local/lib/R/site-library/shiny/www/shared/bootstrap/css/*: 
 
 ```
 .radio,.checkbox{margin-top:5px;margin-bottom:5px}
@@ -188,7 +193,7 @@ select[multiple],select[size]{height:60px;}
 ```
 
 ## rCharts package:
- Replace the source code in **/usr/local/lib/R/site-library/rCharts/libraries/highcharts/layout/chart.html** with the following: 
+ Replace the **highcharts.js** library with version **4.1.4** in **/usr/local/lib/R/site-library/rCharts/libraries/highcharts/js**. And replace the source code in **/usr/local/lib/R/site-library/rCharts/libraries/highcharts/layout/chart.html** with the following: 
 
 ```
 <script type='text/javascript'>
