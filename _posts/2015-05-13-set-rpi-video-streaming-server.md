@@ -53,7 +53,7 @@ The shortcoming of this video streaming server is: **it supports only one client
 <html>
   <head></head>
   <body>
-    <img src="{{ url_for('video_feed') }}" style="width:100%;">
+    <img src="\{\{ url_for('video_feed') \}\}" style="width:100%;">
   </body>
 </html>
 
