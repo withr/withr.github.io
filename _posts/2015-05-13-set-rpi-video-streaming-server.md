@@ -18,7 +18,7 @@ sudo raspi-config
 **2.** Install **Flask**
 
 ```
-sudo apt-get install python-pip
+sudo apt-get install -y python-pip
 sudo pip install flask
 ```
 
@@ -40,7 +40,7 @@ sudo nano flask-video-streaming/app.py
 **5.** Start Flask-server by running: 
 
 ```
-python flask-video-streaming/app.py
+sudo python flask-video-streaming/app.py
 ```
 
 **6.** Find RPi's IP address and run <code>RPi's IP:5000</code> in your web browser.
