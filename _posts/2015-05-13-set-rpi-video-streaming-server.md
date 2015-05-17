@@ -40,7 +40,7 @@ sudo nano flask-video-streaming/app.py
 **5.** Start Flask-server by running: 
 
 ```
-sudo python flask-video-streaming/app.py
+python flask-video-streaming/app.py
 ```
 
 **6.** Find RPi's IP address and run <code>RPi's IP:5000</code> in your web browser.
