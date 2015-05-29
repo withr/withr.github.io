@@ -1,0 +1,60 @@
+<html>
+<head>
+<style>
+
+input[type=range] {
+  -webkit-appearance: none;
+  width: 40vw;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  height: 2vw;
+  cursor: pointer;
+  background: grey;
+  border-radius: 5px;
+}
+input[type=range]::-webkit-slider-thumb {
+  height: 16vw;
+  width: 16vw;
+  border-radius: 8vw;
+  background: green;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -7vw;
+}
+
+#F {
+  -webkit-transform: rotate(270deg);
+  margin-top: 20vw;
+}
+#L {
+  -webkit-transform: rotate(180deg);
+  margin-right: 8vw;
+}
+#R {
+  -webkit-transform: rotate(0deg);
+  margin-left: 8vw;
+  margin-top: 8vw;
+}
+
+</style>
+</head>
+<body style="margin: 0px;">
+<br>
+<div align="center" style="height: 40vw;">
+<input id="F" type="range" min="0" max="100" value="0" step="1" onmouseup="set0('F')">
+</div>
+<div align="center">
+<input id="L" type="range" min="0" max="100" value="0" step="1" onmouseup="set0('L')">
+<input id="R" type="range" min="0" max="100" value="0" step="1" onmouseup="set0('R')">
+</div>
+
+<script>
+function set0(id) {
+  document.getElementById(id).value = 0;
+}
+</script>
+
+
+</body>
+</html>
