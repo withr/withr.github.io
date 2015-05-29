@@ -42,14 +42,20 @@ input[type=range]::-webkit-slider-thumb {
 <body style="margin: 0px;">
 <br>
 <div align="center" style="height: 40vw;">
-<input id="F" type="range" min="0" max="100" value="0" step="1" touchend="set0('F')" onmouseup="set0('F')">
+<input id="F" type="range" min="0" max="100" value="0" step="1" onmouseup="set0('F')">
 </div>
 <div align="center">
-<input id="L" type="range" min="0" max="100" value="0" step="1" touchend="set0('L')" onmouseup="set0('L')">
-<input id="R" type="range" min="0" max="100" value="0" step="1" touchend="set0('R')" onmouseup="set0('R')">
+<input id="L" type="range" min="0" max="100" value="0" step="1" onmouseup="set0('L')">
+<input id="R" type="range" min="0" max="100" value="0" step="1" onmouseup="set0('R')">
 </div>
 
 <script>
+
+$("#F").on("touchend", function(ev) {
+    document.getElementById("#F").value = 0;
+});
+
+
 function set0(id) {
   document.getElementById(id).value = 0;
 }
