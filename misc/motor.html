@@ -1,5 +1,6 @@
 <html>
 <head>
+<meta name="apple-mobile-web-app-capable" content="yes">
 <style>
 
 input[type=range] {
@@ -38,28 +39,22 @@ input[type=range]::-webkit-slider-thumb {
 }
 
 </style>
+
+<script>
+window.onload=function(){ window.scrollTo(0, 1);//设置滚动条 };
+</script>
 </head>
 <body style="margin: 0px;">
 <br>
 <div align="center" style="height: 40vw;">
-<input id="F" type="range" min="0" max="100" value="0" step="1" on-release="set0('F')">
+<input id="F" type="range" min="0" max="100" value="0" step="1">
 </div>
 <div align="center">
-<input id="L" type="range" min="0" max="100" value="0" step="1" on-release="set0('L')">
-<input id="R" type="range" min="0" max="100" value="0" step="1" on-release="set0('R')">
+<input id="L" type="range" min="0" max="100" value="0" step="1">
+<input id="R" type="range" min="0" max="100" value="0" step="1">
 </div>
 
-<script>
 
-$("#F").on("touchend", function(ev) {
-    document.getElementById("#F").value = 0;
-});
-
-
-function set0(id) {
-  document.getElementById(id).value = 0;
-}
-</script>
 
 
 </body>
