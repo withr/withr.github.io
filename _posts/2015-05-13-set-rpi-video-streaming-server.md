@@ -18,7 +18,7 @@ sudo raspi-config
 **2.** Install **Flask**
 
 ```
-sudo apt-get install python-pip
+sudo apt-get install -y python-pip
 sudo pip install flask
 ```
 
