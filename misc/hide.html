@@ -1,0 +1,60 @@
+<!DOCTYPE html> 
+<html> 
+<head> 
+<meta charset=utf-8 /> 
+<meta name="viewport" content="width=device-width, initial-scale=1,"> 
+<title>我是个网页，但不显示滚动条</title> 
+<script> 
+window.onload=function(){ 
+if(document.documentElement.scrollHeight <= document.documentElement.clientHeight) { 
+bodyTag = document.getElementsByTagName('body')[0]; 
+bodyTag.style.height = document.documentElement.clientWidth / screen.width * screen.height + 'px'; 
+} 
+setTimeout(function() { 
+window.scrollTo(0, 1) 
+}, 0); 
+}; 
+</script> 
+<style> 
+/*输入框圆角显示*/ 
+input { 
+background:#fff; border: 1px solid #080; 
+padding:5px; 
+-webkit-border-radius:5px; 
+} 
+/* button 
+---------------------------------------------- */ 
+.button { 
+display: inline-block; 
+zoom: 1; /* zoom and *display = ie7 hack for display:inline-block */ 
+*display: inline; 
+vertical-align: baseline; 
+margin: 0 2px; 
+outline: none; 
+cursor: pointer; 
+text-align: center; 
+text-decoration: none; 
+font: 14px/100% Arial, Helvetica, sans-serif; 
+padding: .5em 2em .55em; 
+text-shadow: 0 1px 1px rgba(0,0,0,.3); 
+-webkit-border-radius: .5em; 
+-webkit-box-shadow: 0 1px 2px rgba(0,0,0,.2); 
+} 
+
+/* green */ 
+.green { 
+color: #e8f0de; 
+border: solid 1px #538312; 
+background: #64991e; 
+background: -webkit-gradient(linear, left top, left bottom, from(#7db72f), to(#4e7d0e)); 
+} 
+</style> 
+</head> 
+<body style="background: #ededed;"> 
+<div style="padding-top:40%;padding-left:20%"> 
+帐号：<input type="text"><br/> 
+密码：<input type="text"><br/> 
+<div> 
+<div style="padding-top:5%;padding-left:23%"><input type="button" class="button green" value="登录"></div> 
+</body> 
+</html>
