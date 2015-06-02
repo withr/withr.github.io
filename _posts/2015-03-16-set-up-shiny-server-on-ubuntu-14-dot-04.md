@@ -89,7 +89,7 @@ R CMD javareconf
 ```
 sudo nano /usr/lib/R/etc/Renviron
 ```
-Comment the line: "R_LIBS_USER=${R_LIBS_USER-'~/R/x86_64-pc-linux-gnu-library/3.0'}" by adding a "#" at the beginning of that line. 
+Comment the line: <code>R_LIBS_USER=${R_LIBS_USER-'~/R/x86_64-pc-linux-gnu-library/3.0'}</code> by adding a "#" at the beginning of that line. 
 
 Now, let's check the default library path in R: 
 
