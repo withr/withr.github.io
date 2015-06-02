@@ -177,6 +177,15 @@ wget http://download2.rstudio.org/rstudio-server-0.98.1103-amd64.deb
 sudo gdebi rstudio-server-0.98.1103-amd64.deb
 
 ```
+
+As Rstudio doesn't allowed log as a sudo user, we need to create a normal user:
+
+```
+sudo adduser rstudio
+```
+
+*rstudio* is an example of the user name, it could be other name. Follow the steps to set a password.
+
 The RStudio-server will run on port 8787 of your server's IP address. Use your user name and password to log onto it. 
 
 You may the some errors, like "ERROR: no permission to install to directory '/usr/local/lib/R/site-library'", that's because RStudio has no writing access to R's site-library directory. We can change the mode of all files in that directory to **777**, so any user can has full access to that directory. 
