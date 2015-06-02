@@ -17,6 +17,11 @@ This progress was conducted by our IT administer, I will not describe the detail
 sudo apt-get update
 ```
 
+And upgrade the server, which will make sure install the latest version of R.
+
+```
+sudo apt-get upgrade
+```
 
 ## Install R and shiny package
 
