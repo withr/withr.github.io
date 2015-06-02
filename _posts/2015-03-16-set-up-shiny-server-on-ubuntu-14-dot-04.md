@@ -32,7 +32,7 @@ Add <code>deb http://cran.uib.no/bin/linux/ubuntu trusty/</code> to its end, and
 - Install R using the following command: 
 
 ```
-sudo apt-get install r-base
+sudo apt-get install -y r-base
 ```
 
 This process would take one minute. 
@@ -48,7 +48,7 @@ This process could take one and half minute, because many dependent packages wer
 - Install Shiny Server
 
 ```
-sudo apt-get install gdebi-core
+sudo apt-get install -y gdebi-core
 wget http://download3.rstudio.org/ubuntu-12.04/x86_64/shiny-server-1.3.0.403-amd64.deb
 sudo gdebi shiny-server-1.3.0.403-amd64.deb
 ```
@@ -65,14 +65,19 @@ Installation of Shiny Server finished!
 - Install **curl** library used by R package *RCurl*:
   
 ```
-  sudo apt-get install libcurl4-openssl-dev 
+  sudo apt-get install -y libcurl4-openssl-dev 
   
 ```
+- Install **libxml2-dev** library used by R package *XML*:
+
+```
+  sudo apt-get install -y libxml2-dev
   
+```
 - Install **Java** used by R package *rJava* and add a system environment variable LDLIBRARYPATH.
 
 ```
-sudo apt-get install openjdk-7-jdk
+sudo apt-get install -y openjdk-7-jdk
 export LD_LIBRARY_PATH=/usr/lib/jvm/java-7-openjdk-amd64/jre/lib/amd64/server
 R CMD javareconf  
 ```
@@ -84,7 +89,7 @@ R CMD javareconf
 ```
 sudo nano /usr/lib/R/etc/Renviron
 ```
-Comment the line: **R_LIBS_USER=${R_LIBS_USER-'~/R/x86_64-pc-linux-gnu-library/3.0'}** by adding a "#" at the beginning of that line. 
+Comment the line: "R_LIBS_USER=${R_LIBS_USER-'~/R/x86_64-pc-linux-gnu-library/3.0'}" by adding a "#" at the beginning of that line. 
 
 Now, let's check the default library path in R: 
 
