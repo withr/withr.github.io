@@ -33,25 +33,21 @@
 	TiltLR = 0;
 	TiltFB = 0;
     function deviceOrientationHandler(tiltLR, tiltFB) {
-		if (Math.abs(TiltLR - tiltLR) >= Math.abs(TiltFB - tiltFB)) {
-			LR = true; FB = false;
-		} else {
-			FB = true;  LR = false;
-		}
+	if (Math.abs(TiltLR - tiltLR) >= Math.abs(TiltFB - tiltFB)) {
+		LR = true; FB = false;
+	} else {
+		FB = true;  LR = false;
+	}
       	document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
       	document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
-		document.getElementById("doTiltLR").style.color = "black";
-		document.getElementById("doTiltFB").style.color = "black";
-      	if (LR) {
-			document.getElementById("doTiltLR").style.color = "red";
-      	} 
-      	if (FB) {
-			document.getElementById("doTiltFB").style.color = "red";
-		}
-		
-		
-		TiltLR = tiltLR;
-		TiltFB = tiltFB;
+	document.getElementById("doTiltLR").style.color = "black";
+	document.getElementById("doTiltFB").style.color = "black";
+	if (document.getElementById("button").style['background-color'] == "green") {
+	      	if (LR) {document.getElementById("doTiltLR").style.color = "red";} 
+	      	if (FB) {document.getElementById("doTiltFB").style.color = "red";}
+	}
+	TiltLR = tiltLR;
+	TiltFB = tiltFB;
     }
     
 	function motor() {
