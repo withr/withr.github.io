@@ -38,13 +38,73 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: 8vw;
 }
 
+@media (orientation: portrait) {
+  body {
+    -webkit-transform: rotate(-90deg);
+    -moz-transform: rotate(-90deg);
+    -o-transform: rotate(-90deg);
+    -ms-transform: rotate(-90deg);
+    transform: rotate(-90deg);
+  }
+}
+
 </style>
 
 <script>
-window.onload=function(){ window.scrollTo(0, 1);//设置滚动条 };
+    init();
+   
+    function init() {
+      if (window.DeviceOrientationEvent) {
+        document.getElementById("doEvent").innerHTML = "DeviceOrientation";
+        // Listen for the deviceorientation event and handle the raw data
+        window.addEventListener('deviceorientation', function(eventData) {
+          // gamma is the left-to-right tilt in degrees, where right is positive
+          var tiltLR = eventData.gamma;
+          
+          // beta is the front-to-back tilt in degrees, where front is positive
+          var tiltFB = eventData.beta;
+          
+          // alpha is the compass direction the device is facing in degrees
+          var dir = eventData.alpha
+          
+          // call our orientation event handler
+          deviceOrientationHandler(tiltLR, tiltFB, dir);
+          }, false);
+      } else {
+        document.getElementById("doEvent").innerHTML = "Not supported on your device or browser.  Sorry."
+      }
+    }
+  
+    function deviceOrientationHandler(tiltLR, tiltFB, dir) {
+      document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
+      document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
+      document.getElementById("doDirection").innerHTML = Math.round(dir);
+      
+    }
+    
+
 </script>
 </head>
 <body style="margin: 0px;">
+<table>
+        <tr>
+          <td>Event Supported</td>
+          <td id="doEvent"></td>
+        </tr>
+        <tr>
+          <td>Tilt Left/Right [gamma]</td>
+          <td id="doTiltLR"></td>
+        </tr>
+        <tr>
+          <td>Tilt Front/Back [beta]</td>
+          <td id="doTiltFB"></td>
+        </tr>
+        <tr>
+          <td>Direction [alpha]</td>
+          <td id="doDirection"></td>
+        </tr>
+      </table>
+
 <br>
 <div align="center" style="height: 40vw;">
 <input id="F" type="range" min="0" max="100" value="0" step="1">
