@@ -6,7 +6,7 @@
 </head>
 <body>
 	<div class="main">
-		<button id="button" style="background-color: red; padding: 5px; border-radius: 5px;" onclick="motor()">Control disabled</button>
+		<button id="button" style="background-color: red; padding: 5px; border-radius: 5px;" onclick="motor()">Motor-control</button>
 		<table>
         	<tr>
           		<td>! [gamma]</td>
@@ -55,12 +55,10 @@
     }
     
 	function motor() {
-  		if (document.getElementById("button").text =="Control disabled") {
-			document.getElementById("button").text ="Control enabled"
-			document.getElementById("button").style['background-color'] = "red";
-  		} else {
+  		if (document.getElementById("button").style['background-color'] == "red") {
 			document.getElementById("button").style['background-color'] = "green";
-			document.getElementById("button").text ="Control disabled"
+  		} else {
+			document.getElementById("button").style['background-color'] = "red";
 		}
 	}
 
