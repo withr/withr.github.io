@@ -41,7 +41,7 @@
         document.getElementById("doTiltLR").style.color = "black";
         document.getElementById("doTiltFB").style.color = "black";
 
-        if (Math.abs(TiltLR - tiltLR) >40 || Math.abs(TiltFB - tiltFB) >40) {
+        if (Math.abs(TiltLR - tiltLR) > 30 || Math.abs(TiltFB - tiltFB) > 30) {
           document.getElementById("button").style['background-color'] = "red";
         }
         if (document.getElementById("button").style['background-color'] == "green") {
