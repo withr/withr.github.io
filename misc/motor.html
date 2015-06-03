@@ -23,6 +23,7 @@
 </head>
 <body>
   <div class="main">
+changed!
       <table>
         <tr>
           <td>Tilt Left/Right [gamma]</td>
@@ -63,7 +64,7 @@
 		TiltLR = 0;
 		TiltFB = 0;
     function deviceOrientationHandler(tiltLR, tiltFB) {
-			if (Math.abs(TiltLR - tiltLR) > Math.abs(TiltFB - tiltFB)) {
+			if (Math.abs(TiltLR - tiltLR) >= Math.abs(TiltFB - tiltFB)) {
 					LR = true;
 			} else {
 					FB = true;
@@ -80,6 +81,9 @@
 
 			LR = false;
 			FB = false;
+
+		TiltLR = tiltLR;
+		TiltFB = tiltFB;
     }
     
 
