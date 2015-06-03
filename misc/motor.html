@@ -1,24 +1,69 @@
-<html>
+
+<!doctype html>
+<html lang="en"> 
 <head>
-<meta name="apple-mobile-web-app-capable" content="yes">
-<style>
+  <meta charset="UTF-8">
+  <title></title>
+  
+  <style type="text/css">
+    body {
+      font-family: sans-serif;
+    }
+  
+      .main {
+      border: 1px solid black;
+      box-shadow: 10px 10px 5px #888;
+      border-radius: 12px;
+      padding: 20px;
+      background-color: #ddd;
+      margin: 25px;
+      width: 450px;
+      margin-left:auto;
+      margin-right:auto;  
+    }
+    
+    .logo {
+      width:275px;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      padding: 15px;
+    }
+    
+    .container {
+      -webkit-perspective: 300; perspective: 300;
+    }
+  </style>
 
+</head>
+<body>
+  <div class="main">
+      <h2>Device Orientation</h2>
+      <table>
+        <tr>
+          <td>Event Supported</td>
+          <td id="doEvent"></td>
+        </tr>
+        <tr>
+          <td>Tilt Left/Right [gamma]</td>
+          <td id="doTiltLR"></td>
+        </tr>
+        <tr>
+          <td>Tilt Front/Back [beta]</td>
+          <td id="doTiltFB"></td>
+        </tr>
+        <tr>
+          <td>Direction [alpha]</td>
+          <td id="doDirection"></td>
+        </tr>
+      </table>
+  </div>
+  
 
-@media (orientation: portrait) {
-  body {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-  }
-}
-
-</style>
-
-<script>
+  <script type="text/javascript">
     init();
-   
+    var count = 0;
+    
     function init() {
       if (window.DeviceOrientationEvent) {
         document.getElementById("doEvent").innerHTML = "DeviceOrientation";
@@ -48,29 +93,13 @@
       
     }
     
-
-</script>
-</head>
-<body style="margin: 0px;">
-<table>
-        <tr>
-          <td>Event Supported</td>
-          <td id="doEvent"></td>
-        </tr>
-        <tr>
-          <td>Tilt Left/Right [gamma]</td>
-          <td id="doTiltLR"></td>
-        </tr>
-        <tr>
-          <td>Tilt Front/Back [beta]</td>
-          <td id="doTiltFB"></td>
-        </tr>
-        <tr>
-          <td>Direction [alpha]</td>
-          <td id="doDirection"></td>
-        </tr>
-      </table>
-
+    
+    // Some other fun rotations to try...
+    //var rotation = "rotate3d(0,1,0, "+ (tiltLR*-1)+"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
+    //var rotation = "rotate("+ tiltLR +"deg) rotate3d(0,1,0, "+ (tiltLR*-1)+"deg) rotate3d(1,0,0, "+ (tiltFB*-1)+"deg)";
+  </script>
+  
+  
 
 </body>
 </html>
