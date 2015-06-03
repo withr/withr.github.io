@@ -9,7 +9,7 @@
 		<a id="button" title="button" style="background-color: red; padding: 5px; border-radius: 5px;" ontouch="motor()" onclick="motor()">Control disabled</a>
 		<table>
         	<tr>
-          		<td>again! [gamma]</td>
+          		<td>! [gamma]</td>
           		<td id="doTiltLR"></td>
         	</tr>
         	<tr>
@@ -34,9 +34,9 @@
 	TiltFB = 0;
     function deviceOrientationHandler(tiltLR, tiltFB) {
 		if (Math.abs(TiltLR - tiltLR) >= Math.abs(TiltFB - tiltFB)) {
-			LR = true;
+			LR = true; FB = false;
 		} else {
-			FB = true;
+			FB = true;  LR = false;
 		}
       	document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
       	document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
@@ -44,11 +44,12 @@
 		document.getElementById("doTiltFB").style.color = "black";
       	if (LR) {
 			document.getElementById("doTiltLR").style.color = "red";
-      	} else {
+      	} 
+      	if (FB) {
 			document.getElementById("doTiltFB").style.color = "red";
 		}
-		LR = false;
-		FB = false;
+		
+		
 		TiltLR = tiltLR;
 		TiltFB = tiltFB;
     }
