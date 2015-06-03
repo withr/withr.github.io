@@ -26,7 +26,7 @@
 
       <table>
         <tr>
-          <td>again! [gamma]</td>
+          <td>back! [gamma]</td>
           <td id="doTiltLR"></td>
         </tr>
         <tr>
@@ -54,6 +54,9 @@
 		TiltLR = 0;
 		TiltFB = 0;
     function deviceOrientationHandler(tiltLR, tiltFB) {
+
+
+setInterval(function(){
 			if (Math.abs(TiltLR - tiltLR) >= Math.abs(TiltFB - tiltFB)) {
 					LR = true;
 			} else {
@@ -72,8 +75,7 @@
 			FB = false;
 			TiltLR = tiltLR;
 			TiltFB = tiltFB;
-
-setInterval(function(){}, 1000);
+}, 1000);
 
     }
     
