@@ -3,40 +3,6 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <style>
 
-input[type=range] {
-  -webkit-appearance: none;
-  width: 40vw;
-}
-
-input[type=range]::-webkit-slider-runnable-track {
-  height: 2vw;
-  cursor: pointer;
-  background: grey;
-  border-radius: 1vw;
-}
-input[type=range]::-webkit-slider-thumb {
-  height: 16vw;
-  width: 16vw;
-  border-radius: 8vw;
-  background: green;
-  cursor: pointer;
-  -webkit-appearance: none;
-  margin-top: -7vw;
-}
-
-#F {
-  -webkit-transform: rotate(270deg);
-  margin-top: 20vw;
-}
-#L {
-  -webkit-transform: rotate(180deg);
-  margin-right: 8vw;
-}
-#R {
-  -webkit-transform: rotate(0deg);
-  margin-left: 8vw;
-  margin-top: 8vw;
-}
 
 @media (orientation: portrait) {
   body {
@@ -104,17 +70,6 @@ input[type=range]::-webkit-slider-thumb {
           <td id="doDirection"></td>
         </tr>
       </table>
-
-<br>
-<div align="center" style="height: 40vw;">
-<input id="F" type="range" min="0" max="100" value="0" step="1">
-</div>
-<div align="center">
-<input id="L" type="range" min="0" max="100" value="0" step="1">
-<input id="R" type="range" min="0" max="100" value="0" step="1">
-</div>
-
-
 
 
 </body>
