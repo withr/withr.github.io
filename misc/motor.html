@@ -8,15 +8,15 @@
 	<div class="main">
 		<button id="button" style="background-color: red; padding: 5px; border-radius: 5px;" onclick="motor()">Motor-control</button>
 		<table>
-        	<tr>
-          		<td>! [gamma]</td>
-          		<td id="doTiltLR"></td>
-        	</tr>
-        	<tr>
-          		<td>Tilt Front/Back [beta]</td>
-          		<td id="doTiltFB"></td>
-        	</tr>
-      </table>
+    	<tr>
+    		<td>! [gamma]</td>
+    		<td id="doTiltLR"></td>
+    	</tr>
+    	<tr>
+    		<td>Tilt Front/Back [beta]</td>
+    		<td id="doTiltFB"></td>
+    	</tr>
+  </table>
   </div>
 
   <script type="text/javascript">
@@ -30,34 +30,37 @@
           }, false);
       } 
     }
-	TiltLR = 0;
-	TiltFB = 0;
+  	TiltLR = 0;
+  	TiltFB = 0;
     function deviceOrientationHandler(tiltLR, tiltFB) {
-	if (Math.abs(TiltLR - tiltLR) >= Math.abs(TiltFB - tiltFB)) {
-		LR = true; FB = false;
-	} else {
-		FB = true;  LR = false;
-	}
-      	document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
-      	document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
-	document.getElementById("doTiltLR").style.color = "black";
-	document.getElementById("doTiltFB").style.color = "black";
-	if (document.getElementById("button").style['background-color'] == "green") {
-	      	if (LR) {document.getElementById("doTiltLR").style.color = "red";} 
-	      	if (FB) {document.getElementById("doTiltFB").style.color = "red";}
-	}
-	TiltLR = tiltLR;
-	TiltFB = tiltFB;
+    	if (Math.abs(TiltLR - tiltLR) >= Math.abs(TiltFB - tiltFB)) {
+    		LR = true; FB = false;
+    	} else {
+    		FB = true;  LR = false;
+    	}
+      document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
+      document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
+      document.getElementById("doTiltLR").style.color = "black";
+      document.getElementById("doTiltFB").style.color = "black";
+
+      if (Math.abs(TiltLR - tiltLR) >40 || Math.abs(TiltFB - tiltFB) >40) {
+        document.getElementById("button").style['background-color'] = "green";
+      }
+      if (document.getElementById("button").style['background-color'] == "green") {
+        if (LR) {document.getElementById("doTiltLR").style.color = "red";} 
+        if (FB) {document.getElementById("doTiltFB").style.color = "red";}
+      }
+    	TiltLR = tiltLR;
+    	TiltFB = tiltFB;
     }
     
-	function motor() {
-  		if (document.getElementById("button").style['background-color'] == "red") {
-			document.getElementById("button").style['background-color'] = "green";
-  		} else {
-			document.getElementById("button").style['background-color'] = "red";
-		}
-	}
-
+  	function motor() {
+    	if (document.getElementById("button").style['background-color'] == "red") {
+        document.getElementById("button").style['background-color'] = "green";
+      } else {
+  			document.getElementById("button").style['background-color'] = "red";
+  		}
+  	}
   </script>
 
 </body>
