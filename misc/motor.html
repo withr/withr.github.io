@@ -2,28 +2,11 @@
 <!doctype html>
 <html lang="en"> 
 <head>
-  <meta charset="UTF-8">
-  <title></title>
-  
-  <style type="text/css">
-
-@media (orientation: portrait) {
-  body {
-    -webkit-transform: rotate(-90deg);
-    -moz-transform: rotate(-90deg);
-    -o-transform: rotate(-90deg);
-    -ms-transform: rotate(-90deg);
-    transform: rotate(-90deg);
-  }
-}
-
-  
-  </style>
 
 </head>
 <body>
   <div class="main">
-
+<a id="button" title="button" style="background: red; padding: 5px; border-radius: 5px;" onclick="motor()">Motor-control disabled!</a>
       <table>
         <tr>
           <td>again! [gamma]</td>
@@ -73,12 +56,19 @@
 			TiltLR = tiltLR;
 			TiltFB = tiltFB;
 
-setInterval(function(){
-
-}, 5000);
 
     }
     
+function motor() {
+  if (document.getElementById("button").text =="Motor-control enabled!") {
+		document.getElementById("button").text ="Motor-control disabled!"
+		document.getElementById("button").style['background-color'] = "red";
+  } else {
+
+		document.getElementById("button").style['background-color'] = "green";
+		document.getElementById("button").text ="Motor-control enabled!"
+}
+}
 
   </script>
   
