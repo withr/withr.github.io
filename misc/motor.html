@@ -1,64 +1,63 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="style.css" />
+    <script src="www/jquery-2.1.4.min.js"></script>
+  </head>
+  <body style="margin:0px;">
+    <iframe></iframe>
+ 
+    <input id="speed" type="range" min="2000" max="2100" value="2000" step="1">
 
-<!doctype html>
-<html lang="en"> 
-  <head></head>
-  <body>
-    <div class="main">
-      <button id="button" style="background-color: red; padding: 5px; border-radius: 5px;" onclick="motor()">Motor-control</button>
-      <table>
-        <tr>
-          <td>! [gamma]</td>
-          <td id="doTiltLR"></td>
-        </tr>
-        <tr>
-          <td>Tilt Front/Back [beta]</td>
-          <td id="doTiltFB"></td>
-        </tr>
-      </table>
-    </div>
-
+    <button id="button" onclick="ctrl()">Motors</button>
+    
+    <tr>
+      <td>Tilt Left/Right [gamma]</td>
+      <td id="doTiltLR"></td>
+    </tr>
+    <tr>
+      <td>Tilt Front/Back [beta]</td>
+      <td id="doTiltFB"></td>
+    </tr>
     <script type="text/javascript">
-      init();
+      $("iframe").attr("src", window.location.origin.replace('8000', '80'))
+      
       function init() {
         if (window.DeviceOrientationEvent) {
           window.addEventListener('deviceorientation', function(eventData) {
-          var tiltLR = eventData.gamma;
-          var tiltFB = eventData.beta;
-          deviceOrientationHandler(tiltLR, tiltFB);
+            var tiltLR = eventData.gamma;
+            var tiltFB = eventData.beta;
+            deviceOrientationHandler(tiltLR, tiltFB);
           }, false);
         } 
-      }
-      TiltLR = 0;
-      TiltFB = 0;
+      }; init();
+      
       function deviceOrientationHandler(tiltLR, tiltFB) {
-        if (Math.abs(TiltLR - tiltLR) >= Math.abs(TiltFB - tiltFB)) {
-          LR = true; FB = false;
-        } else {
-          FB = true;  LR = false;
-        }
-        document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
-        document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
-        document.getElementById("doTiltLR").style.color = "black";
-        document.getElementById("doTiltFB").style.color = "black";
-
-        if (Math.abs(TiltLR - tiltLR) > 30 || Math.abs(TiltFB - tiltFB) > 30) {
-          document.getElementById("button").style['background-color'] = "red";
-        }
         if (document.getElementById("button").style['background-color'] == "green") {
-          if (LR) {document.getElementById("doTiltLR").style.color = "red";} 
-          if (FB) {document.getElementById("doTiltFB").style.color = "red";}
+          var sp = document.getElementById("speed").value()
+          if (tiltFB < 0) {
+            var sp1 = 1000 + sp * (1-Math.abs(tiltFB)/45)
+            var sp2 = 3000 + sp
+          } else {
+            var sp1 = 1000 + sp
+            var sp2 = 3000 + sp * (1-Math.abs(tiltFB)/45)
+          }
+          document.getElementById("doTiltLR").innerHTML = Math.round(sp1);
+          document.getElementById("doTiltFB").innerHTML = Math.round(sp2);
+        } else {
+          $.get('doStuff.py?q=0');
         }
-        TiltLR = tiltLR;
-        TiltFB = tiltFB;
       }
 
-      function motor() {
+      function ctrl() {
         if (document.getElementById("button").style['background-color'] == "red") {
           document.getElementById("button").style['background-color'] = "green";
         } else {
           document.getElementById("button").style['background-color'] = "red";
         }
       }
+
     </script>
   </body>
 </html>
+  
+  
