@@ -1,14 +1,5 @@
 iframe {border:0px; width: 100vw; height: 60vw;}
-#button {
-  background-color: red; 
-  width: 100px;
-  height: 100px; 
-  border-radius: 50px;
-  top: 10px;
-  left: 10px;
-  position: absolute;
-  border: 1px solid transparent;
-}
+
 
 div {text-align:center; margin-top: 10px;}
 iframe {border:0px; width: 100vw; height: 75vw;}
@@ -33,15 +24,24 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -3.5vw;
 }
 
-#speed {
-
-margin-top: 20vw;
-}
 
 #speed {
+  margin-top: 20vw;
   -webkit-transform: rotate(270deg);
-  top: 120px;
+  top: 10px;
   left: -140px;
   position: absolute;
   border: 1px solid transparent;
 }
+
+#button {
+  background-color: red; 
+  width: 80px;
+  height: 80px; 
+  border-radius: 40px;
+  top: 300px;
+  left: 10px;
+  position: absolute;
+  border: 1px solid transparent;
+}
+
