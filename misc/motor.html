@@ -20,7 +20,7 @@
     </tr>
     <script type="text/javascript">
       $("iframe").attr("src", window.location.origin.replace('8000', '80'))
-      
+      init();
       function init() {
         if (window.DeviceOrientationEvent) {
           window.addEventListener('deviceorientation', function(eventData) {
@@ -29,7 +29,7 @@
             deviceOrientationHandler(tiltLR, tiltFB);
           }, false);
         } 
-      }; init();
+      }; 
       
       function deviceOrientationHandler(tiltLR, tiltFB) {
         if (document.getElementById("button").style['background-color'] == "green") {
