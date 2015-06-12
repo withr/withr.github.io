@@ -29,7 +29,7 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: 20vw;
   -webkit-transform: rotate(270deg);
   top: 10px;
-  left: -120px;
+  left: -160px;
   position: absolute;
   border: 1px solid transparent;
 }
@@ -39,7 +39,7 @@ input[type=range]::-webkit-slider-thumb {
   width: 80px;
   height: 80px; 
   border-radius: 40px;
-  top: 400px;
+  top: 450px;
   left: 10px;
   position: absolute;
   border: 1px solid transparent;
