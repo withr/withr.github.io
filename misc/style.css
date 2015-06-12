@@ -15,13 +15,13 @@ input[type=range]::-webkit-slider-runnable-track {
   border-radius: 0.5vw;
 }
 input[type=range]::-webkit-slider-thumb {
-  height: 8vw;
-  width: 8vw;
-  border-radius: 4vw;
+  height: 9vw;
+  width: 9vw;
+  border-radius: 4.5vw;
   background: green;
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -3.5vw;
+  margin-top: -4vw;
 }
 
 table {
@@ -42,7 +42,7 @@ table {
   width: 80px;
   height: 80px; 
   border-radius: 40px;
-  top: 440px;
+  top: 420px;
   left: 10px;
   position: absolute;
   border: 1px solid transparent;
