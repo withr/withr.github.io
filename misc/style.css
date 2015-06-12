@@ -24,7 +24,10 @@ input[type=range]::-webkit-slider-thumb {
   margin-top: -3.5vw;
 }
 
-
+table {
+  top: 10px;
+  position: absolute;
+}
 #speed {
   margin-top: 20vw;
   -webkit-transform: rotate(270deg);
