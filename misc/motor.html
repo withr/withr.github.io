@@ -35,7 +35,7 @@
         if (document.getElementById("button").style['background-color'] == "green") {
           document.getElementById("doTiltLR").innerHTML = Math.round(tiltLR);
           document.getElementById("doTiltFB").innerHTML = Math.round(tiltFB);
-          var sp = document.getElementById("speed").value()
+          var sp = parseInt(document.getElementById("speed").value)
           if (tiltFB < 0) {
             var sp1 = 1000 + sp * (1-Math.abs(tiltFB)/45)
             var sp2 = 3000 + sp
