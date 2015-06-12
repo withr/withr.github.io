@@ -10,14 +10,17 @@
 
     <button id="button" onclick="ctrl()">Motors</button>
     
-    <tr>
-      <td>Tilt Left/Right [gamma]</td>
-      <td id="doTiltLR"></td>
-    </tr>
-    <tr>
-      <td>Tilt Front/Back [beta]</td>
-      <td id="doTiltFB"></td>
-    </tr>
+			<table>
+        <tr>
+          <td>Tilt Left/Right [gamma]</td>
+          <td id="doTiltLR"></td>
+        </tr>
+        <tr>
+          <td>Tilt Front/Back [beta]</td>
+          <td id="doTiltFB"></td>
+        </tr>
+      </table>
+
     <script type="text/javascript">
       $("iframe").attr("src", window.location.origin.replace('8000', '80'))
       init();
@@ -46,6 +49,7 @@
           document.getElementById("doTiltLR").innerHTML = Math.round(sp1);
           document.getElementById("doTiltFB").innerHTML = Math.round(sp2);
         } else {
+           alert()
           //$.get('doStuff.py?q=0');
         }
       }
