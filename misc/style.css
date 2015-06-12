@@ -18,19 +18,19 @@ input[type=range] {
 }
 
 input[type=range]::-webkit-slider-runnable-track {
-  height: 2vw;
+  height: 1vw;
   cursor: pointer;
   background: grey;
-  border-radius: 1vw;
+  border-radius: 0.5vw;
 }
 input[type=range]::-webkit-slider-thumb {
-  height: 16vw;
-  width: 16vw;
-  border-radius: 8vw;
+  height: 8vw;
+  width: 8vw;
+  border-radius: 4vw;
   background: green;
   cursor: pointer;
   -webkit-appearance: none;
-  margin-top: -7vw;
+  margin-top: -3.5vw;
 }
 
 #speed {
@@ -40,7 +40,6 @@ margin-top: 20vw;
 
 #speed {
   -webkit-transform: rotate(270deg);
-
   top: 10px;
   left: 10px;
   position: absolute;
