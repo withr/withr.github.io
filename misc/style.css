@@ -40,8 +40,8 @@ margin-top: 20vw;
 
 #speed {
   -webkit-transform: rotate(270deg);
-  top: 10px;
-  left: 10px;
+  top: 150px;
+  left: -140px;
   position: absolute;
   border: 1px solid transparent;
 }
