@@ -40,9 +40,11 @@
           if (tiltFB < 0) {
             var sp1 = 1000 + sp * (1-Math.abs(tiltFB)/45)
             var sp2 = 3000 + sp
+						if (sp1 < 1000) {sp1 = 1000}
           } else {
             var sp1 = 1000 + sp
             var sp2 = 3000 + sp * (1-Math.abs(tiltFB)/45)
+            if (sp2 < 3000) {sp2 = 3000}
           }
           document.getElementById("doTiltLR").innerHTML = Math.round(sp1);
           document.getElementById("doTiltFB").innerHTML = Math.round(sp2);
