@@ -5,22 +5,18 @@
   </head>
   <body style="margin:0px;">
     <iframe></iframe>
- 
     <input id="speed" type="range" min="0" max="1000" value="0" step="10">
-
     <button id="button" onclick="ctrl()">Motors</button>
-    
-			<table>
-        <tr>
-          <td>Left: </td>
-          <td id="doTiltLR"></td>
-        </tr>
-        <tr>
-          <td>Right:</td>
-          <td id="doTiltFB"></td>
-        </tr>
-      </table>
-
+		<table>
+			<tr>
+				<td>Left: </td>
+				<td id="doTiltLR"></td>
+			</tr>
+			<tr>
+				<td>Right:</td>
+				<td id="doTiltFB"></td>
+			</tr>
+		</table>
     <script type="text/javascript">
       $("iframe").attr("src", window.location.origin.replace('8000', '80'))
       init();
@@ -32,8 +28,7 @@
             deviceOrientationHandler(tiltLR, tiltFB);
           }, false);
         } 
-      }; 
-      
+      };   
       function deviceOrientationHandler(tiltLR, tiltFB) {
         if (document.getElementById("button").style['background-color'] == "green") {
           var sp = parseInt(document.getElementById("speed").value)
@@ -52,7 +47,6 @@
           $.get('doStuff.py?q=0');
         }
       }
-
       function ctrl() {
         if (document.getElementById("button").style['background-color'] == "red") {
           document.getElementById("button").style['background-color'] = "green";
@@ -60,7 +54,6 @@
           document.getElementById("button").style['background-color'] = "red";
         }
       }
-
     </script>
   </body>
 </html>
