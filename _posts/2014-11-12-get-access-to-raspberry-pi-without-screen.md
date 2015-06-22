@@ -104,13 +104,15 @@ Then, run the following command to re-config RPi's network connection:
 sudo /etc/init.d/networking restart
 {% endhighlight %}
 
-now use *ifconfig* to check if device **wlan0** now has IP address, if yes, then your RPi has connected to internet already.  You can use *ping* to test web connection, like: 
+now use *ifconfig* to check if device **wlan0** now has IP address, if yes, then your RPi has connected to internet already. Restart RPi, and then you can use *ping* to test web connection, like: 
 
 {% highlight sh %}
 ping www.google.com
 {% endhighlight %}
 
 ![]( /images/ifconfig_ip.jpg )
+
+
 
 Now, we can access the RPi via Ethernet cable and let RPi visit internet through USB WiFi adapter. Note, we can only access RPi via Ethernet cable because we added **ip=192.168.10.100** to **cmdline.txt** in the boot directory of RPi. Every time the RPi start, it sets its IP address as **192.168.10.100**.
 
@@ -153,11 +155,12 @@ On some environment, we want to control RPi remotely. Of course we can use **Rou
 
 With the WiFi router connected with RPi through Ethernet cable, start WiFi router. The red led indicator will light, and after several seconds, it blinks and changes to blue blinks every two seconds, then use your smart phone to search the available WiFi router, and choose the one connected with the Ethernet cable. **Note**, the WiFi router's name and password generally come with the device, look for them at device's bottom or from the manual. 
 
-![]( /images/RPi_Ethernet_WiFi.jpg )
+![]( /images/MobileRJ45RPi.png )
 
 
 After accessing to the aimed WiFi, start or reboot RPi. Because there is Ethernet cable connected, RPi can be accessed through Ethernet card's IP address (192.168.10.100, set as static). Note, this will take some time!
 
+![]( /images/RPi_Ethernet_WiFi.jpg )
 
 Now, if we want to connect RPi through WiFi (with WiFi router connected to RPi via Ethernet cable), we should run the following command first: 
 
