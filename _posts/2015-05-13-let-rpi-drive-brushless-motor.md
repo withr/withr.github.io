@@ -33,7 +33,7 @@ s.set_servo(4, 2000)
 ```
 The above commands will generate a 2000us (2ms) PWM signal, which is the maximum throttle of the ESC ([see](https://solenerotech1.wordpress.com/esc/)).
 
-**4.** Connect ESC’s power wires to battery. You will hear some sound, like **bee----**, or **bee--bee**, which means the maximum throttle was setup successfully, and waiting for minimum signal input. Now, back to RPi’s python console, and type the following quickly (before you hear any sound of the ESC):
+**4.** Connect ESC’s power wires to battery. You will hear some sound, like **bee----**, or **bee--bee**, which means the maximum throttle was setup successfully, and waiting for minimum signal input. Now, back to RPi’s python console, and type the following **quickly** (before you hear any sound of the ESC):
 
 ```
 s.set_servo(4, 1000)
@@ -61,4 +61,4 @@ s.set_servo(4, 1300)
 
 Theoretically, the motor should start when the PWM cycle is longer than 1ms, but due to different quality of the motor, some of them will not spin until they receive a higher voltage signal. You  can start with <code>s.set_servo(4, 1000)</code>, and increase with a step 10 to see when your motor start to spin.
 
-#### Note: If your motor didn’t spin, one reason could be your ESC doesn’t work. I bought four ESCs, and only two of them work. 
+#### Note: If your motor didn’t spin, one reason could be your ESC doesn’t work. I bought four ESCs, and only two of them work :(
