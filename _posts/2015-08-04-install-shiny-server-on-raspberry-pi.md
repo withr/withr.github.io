@@ -179,8 +179,7 @@ sudo nano server.R
 
 ```
 sudo chmod 766 -R /srv
-sudo passwd root
-su - -c shiny-server
+sudo shiny-server
 
 ```
 
