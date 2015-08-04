@@ -43,23 +43,25 @@ Besides the Raspberry Pi (B+) and a 5V2A micro USB power cable, you need also th
 ### Install R from source
 To install R using official recommandation for *[Debian] (https://cran.r-project.org/bin/linux/debian/)* will fail. Because for Raspbain (which based on Debian), the defualt *r-base-core* is version 2.15.1-4, while it needs a higher version to install *r-base* under *Wheezy*. The simplest way to install R is install it from source, though it will take more than one hour.
 
- - **Install R**. You can paste all the following commands into the terminal, then check back after one hour.
+ - **Install dependencies**. 
+  
+  ```
+  sudo apt-get install -y gfortran libreadline6-dev libx11-dev libxt-dev libcairo2-dev
+
+  ```
+  
+ - **Install R**. You can paste all the following commands into the terminal, then check back after two hours.
  
   ```
   wget http://cran.rstudio.com/src/base/R-3/R-3.1.2.tar.gz 
   tar zxvf R-3.1.2.tar.gz; cd R-3.1.2/ 
-  ./configure; 
-  make; 
+  ./configure; make; 
   sudo make install R
+  
   ```
  After the installation finished, type **R** in the terminal to check if R has been installed successfully.
  
- - **Install dependencies**. The following package is needed for installing R package: *Cairo*. Without it, you will get error like: "Unable to start device PNG" when rendering a plot.
-  
-  ```
-  sudo apt-get install libcairo2-dev
-  ```
-  
+
   
   - **Install *shiny* package**.
   We can't install R packages in R console like what we usrally do. The reason is RPi has a small memory which is not enough to conduct such kind of installation. Instead, we can install them from their sources. The *shiny* package has several dependent packages, and we need to install them first before installing *shiny*. Download them first: 
@@ -74,6 +76,7 @@ To install R using official recommandation for *[Debian] (https://cran.r-project
   wget https://cran.r-project.org/src/contrib/R6_2.1.0.tar.gz
   wget https://cran.r-project.org/src/contrib/Cairo_1.5-8.tar.gz
   wget https://cran.r-project.org/src/contrib/shiny_0.12.1.tar.gz
+  
   ```
   Install above packages from command line (This progress will also take long time):
   
@@ -104,8 +107,8 @@ The default *cmake* on RPi is version: , while to install Shiny Server we need a
 wget http://www.cmake.org/files/v2.8/cmake-2.8.11.2.tar.gz
 tar xzf cmake-2.8.11.2.tar.gz
 cd cmake-2.8.11.2
-./configure
-make; sudo make install
+./configure; make; 
+sudo make install
 
 ```
   
@@ -115,15 +118,19 @@ Just follow the instruction on RStudio's offical [website](https://github.com/rs
 ```
 # Clone the repository from GitHub
 git clone https://github.com/rstudio/shiny-server.git
-
-# Get into a temporary directory in which we'll build the project
 cd shiny-server
-mkdir tmp
-cd tmp
+
+
 
 # Add the bin directory to the path so we can reference node
 DIR=`pwd`
 PATH=$DIR/../bin:$PATH
+
+# Get into a temporary directory in which we'll build the project
+mkdir tmp
+cd tmp
+
+
 
 # See the "Python" section below if your default python version is not 2.6 or 2.7. 
 PYTHON=`which python`
