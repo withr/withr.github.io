@@ -14,7 +14,7 @@ Several people asked me if I ever installed Shiny Server on Raspberry Pi (RPi) b
 
 ### In short: **Yes!** It's possible to install Shiny Server on RPi. 
 
-#### Note: the installing process may take up to 8 hours and to open a shiny application may take up to 10 seconds!
+#### Note: the installing process may take up to 10 hours and to open a shiny application may take up to 30 seconds!
 
 ### Devinces needed
 Besides the Raspberry Pi (B+) and a 5V2A micro USB power cable, you need also the following devices: 
