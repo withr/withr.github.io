@@ -6,6 +6,8 @@ comments: true
 categories: RPi R Shiny
 ---
 
+## Not verified!!
+
 Several people asked me if I ever installed Shiny Server on Raspberry Pi (RPi) because I introduce myself as a "R and Raspberry Pi fan" on my [blogs](http://withr.me/). Though I don't think RPi is suitable to hold a Shiny Server due to its low memory size, but other guys may have some good reason to do so, especially that RPi is getting more and more powerful. So I wrote this step-by-step guide to share my experience. 
 
 
