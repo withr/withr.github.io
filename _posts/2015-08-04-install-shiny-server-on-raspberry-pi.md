@@ -63,7 +63,7 @@ To install R using official recommandation for *[Debian] (https://cran.r-project
  
 
   
-  - **Install *shiny* package**.
+### Install *shiny* package
   We can't install R packages in R console like what we usrally do. The reason is RPi has a small memory which is not enough to conduct such kind of installation. Instead, we can install them from their sources. The *shiny* package has several dependent packages, and we need to install them first before installing *shiny*. Download them first: 
   
   ```
