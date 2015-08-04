@@ -43,12 +43,13 @@ Besides the Raspberry Pi (B+) and a 5V2A micro USB power cable, you need also th
 ### Install R from source
 To install R using official recommandation for *[Debian] (https://cran.r-project.org/bin/linux/debian/)* will fail. Because for Raspbain (which based on Debian), the defualt *r-base-core* is version 2.15.1-4, while it needs a higher version to install *r-base* under *Wheezy*. The simplest way to install R is install it from source, though it will take more than two hours.
 
- - **Install dependencies**. 
+ - **Install dependencies and reboot**. 
   
   ```
   sudo apt-get install -y gfortran libreadline6-dev libx11-dev libxt-dev libcairo2-dev
-
+  sudo reboot
   ```
+  
   
  - **Install R**. You can paste all the following commands into the terminal, then check back after two hours.
  
