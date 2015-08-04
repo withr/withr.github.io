@@ -1,6 +1,9 @@
 jekyll serve
+
 git add --all
+
 git commit -m "msg"
+
 git push
 
 
