@@ -100,7 +100,7 @@ sudo make install
 ```
   
 ### Install Shiny-server
-Just follow the instruction on RStudio's offical [website](https://github.com/rstudio/shiny-server/wiki/Building-Shiny-Server-from-Source): 
+Just follow the instruction on RStudio's offical [website](https://github.com/rstudio/shiny-server/wiki/Building-Shiny-Server-from-Source), and the installation may take up to three hours! 
 
 ```
 git clone https://github.com/rstudio/shiny-server.git
