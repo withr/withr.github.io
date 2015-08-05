@@ -131,12 +131,12 @@ sudo make install
 
 ```
 
-### Download Shiny Server default configure [file](https://github.com/rstudio/shiny-server/blob/master/config/default.config)
+### Create the Shiny Server configure file
 
+Create an empty file and fill it the content of [default.conf ](https://github.com/rstudio/shiny-server/blob/master/config/default.config)
 
 ```
-cd /etc/shiny-server
-wget http://withr.me/misc/shiny-server.conf
+sudo nano /etc/shiny-server/shiny-server.conf
 
 ```
 
