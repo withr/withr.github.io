@@ -116,7 +116,7 @@ sudo make install
 ```
 
 ### Post-Install
-Prepare a system for such Shiny Server's configuration.
+Prepare a system for Shiny Server's default configuration.
 
 ```
 sudo ln -s /usr/local/shiny-server/bin/shiny-server /usr/bin/shiny-server
