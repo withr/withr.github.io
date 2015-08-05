@@ -18,33 +18,27 @@ Several people asked me if I ever installed Shiny Server on Raspberry Pi (RPi) b
 
   
 ### Prepare your RPi
-  - Please go through this [blog](http://withr.me/get-access-to-raspberry-pi-without-screen/) to get your RPi connected to Internet. 
-  - When your RPi get access to Internet, update it first using command: 
+  Please go through this [blog](http://withr.me/get-access-to-raspberry-pi-without-screen/) to get your RPi connected to Internet. When your RPi get access to Internet, update it first, then extend its storage space and reboot: 
   
   ```
   sudo apt-get update
-  ```
-  
-  - Then we need to extend the storage space of RPi and reboot it.
-
-  ```
   sudo raspi-config
 
   ```
   
   
-### Install R from source
-To install R using official recommandation for *[Debian] (https://cran.r-project.org/bin/linux/debian/)* will fail. Because for Raspbain (which based on Debian), the defualt *r-base-core* is version 2.15.1-4, while it needs a higher version to install *r-base* under *Wheezy*. The simplest way to install R is install it from source, though it will take more than two hours.
 
- - **Install dependencies and reboot**. 
+
+### **Install dependencies and reboot**. 
   
   ```
   sudo apt-get install -y gfortran libreadline6-dev libx11-dev libxt-dev libcairo2-dev
   ```
-  The above installation may used most of the memory, you can simply release the memory by rebooting you RPi.
+  The above installation may use most of RPi's memory, you can simply release the memory by rebooting it.
   
   
- - **Install R**. You can paste all the following commands into the terminal, then check back after two hours.
+### Install R from source
+To install R using official recommandation for *[Debian] (https://cran.r-project.org/bin/linux/debian/)* will fail. Because for Raspbain (which based on Debian), the defualt *r-base-core* is version 2.15.1-4, while it needs a higher version to install *r-base* under *Wheezy*. The simplest way to install R is install it from source, though it will take more than two hours. You can paste all the following commands into the terminal (don't forget to press "Enter"), then check back after two hours
  
   ```
   wget http://cran.rstudio.com/src/base/R-3/R-3.1.2.tar.gz 
@@ -89,11 +83,8 @@ To install R using official recommandation for *[Debian] (https://cran.r-project
     
   ```
   
-  Check whether the *shiny* package was installed successfully in R console: 
-  
-  ```
-  library(shiny)
-  ```
+  To check whether the *shiny* package was installed successfully, we can simply load the package in R console: <code>library(shiny)</code>.
+
   
 ### Install cmake 
 
