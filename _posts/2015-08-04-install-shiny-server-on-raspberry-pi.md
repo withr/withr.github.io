@@ -16,13 +16,6 @@ Several people asked me if I ever installed Shiny Server on Raspberry Pi (RPi) b
 
 #### Note: the installing process may take up to 10 hours and to open a shiny application may take up to 30 seconds!
 
-### Devices needed
-Besides the Raspberry Pi (B+) and a 5V2A micro USB power cable, you need also the following devices: 
-
-  - A Micro SD card (I just have a 32GB card and I didn't test smaller ones)
-  - A Micro SD card reader
-  - An Ethernet cable
-  - A WiFi adapter (Not necessary if you can get your RPi connect to Internet through Ethernet cable)
   
 ### Prepare your RPi
   - Please go through this [blog](http://withr.me/get-access-to-raspberry-pi-without-screen/) to get your RPi connected to Internet. 
