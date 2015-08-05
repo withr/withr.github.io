@@ -115,6 +115,21 @@ sudo make install
 
 ```
 
+### Post-Install
+Prepare a system for such Shiny Server's configuration.
+
+```
+sudo ln -s /usr/local/shiny-server/bin/shiny-server /usr/bin/shiny-server
+sudo useradd -r -m shiny
+sudo mkdir -p /var/log/shiny-server
+sudo mkdir -p /srv/shiny-server
+sudo mkdir -p /var/lib/shiny-server
+sudo chown shiny /var/log/shiny-server
+sudo mkdir -p /etc/shiny-server
+
+```
+
+
 ### Create the Shiny Server configure file
 
 Create an empty file and fill it the content of [default.conf ](https://github.com/rstudio/shiny-server/blob/master/config/default.config)
@@ -139,7 +154,7 @@ sudo nano server.R
 
 
 ```
-sudo chmod 766 -R /srv
+sudo chmod 777 -R /srv
 sudo shiny-server
 
 ```
