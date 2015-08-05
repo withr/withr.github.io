@@ -58,7 +58,7 @@ To install R using official recommandation for *[Debian] (https://cran.r-project
   tar zxvf R-3.1.2.tar.gz; cd R-3.1.2/ 
   ./configure; make; 
   sudo make install
-  
+   
   ```
  After the installation finished, type **R** in the terminal to check if R has been installed successfully.
  
@@ -78,7 +78,7 @@ To install R using official recommandation for *[Debian] (https://cran.r-project
   wget https://cran.r-project.org/src/contrib/R6_2.1.0.tar.gz
   wget https://cran.r-project.org/src/contrib/Cairo_1.5-8.tar.gz
   wget https://cran.r-project.org/src/contrib/shiny_0.12.1.tar.gz
-  
+   
   ```
   Install above packages from command line:
   
@@ -93,7 +93,7 @@ To install R using official recommandation for *[Debian] (https://cran.r-project
    sudo R CMD INSTALL R6_2.1.0.tar.gz
    sudo R CMD INSTALL Cairo_1.5-8.tar.gz
    sudo R CMD INSTALL shiny_0.12.1.tar.gz 
-   
+    
   ```
   
   Check whether the *shiny* package was installed successfully in R console: 
@@ -112,7 +112,7 @@ tar xzf cmake-2.8.11.2.tar.gz
 cd cmake-2.8.11.2
 ./configure; make; 
 sudo make install
-
+ 
 ```
   
 ### Install Shiny-server
@@ -121,14 +121,13 @@ Just follow the instruction on RStudio's offical [website](https://github.com/rs
 ```
 git clone https://github.com/rstudio/shiny-server.git
 cd shiny-server; DIR=`pwd`; PATH=$DIR/bin:$PATH
-mkdir tmp; cd tmp
-PYTHON=`which python`
+mkdir tmp; cd tmp; PYTHON=`which python`
 cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DPYTHON="$PYTHON" ../
 make; mkdir ../build
 (cd .. && ./bin/npm --python="$PYTHON" rebuild)
 (cd .. && ./bin/node ./ext/node/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js --python="$PYTHON" rebuild)
 sudo make install
-
+ 
 
 ```
 
