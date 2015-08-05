@@ -80,7 +80,7 @@ To install R using official recommandation for *[Debian] (https://cran.r-project
   wget https://cran.r-project.org/src/contrib/shiny_0.12.1.tar.gz
   
   ```
-  Install above packages from command line (This progress will also take long time):
+  Install above packages from command line:
   
   ```
    sudo R CMD INSTALL Rcpp_0.12.0.tar.gz
