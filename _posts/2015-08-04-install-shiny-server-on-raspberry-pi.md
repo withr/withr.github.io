@@ -144,8 +144,7 @@ Create a demo shiny-app in **/srv/shiny-server**, like [this](http://shiny.rstud
   
 ```
 cd /srv/shiny-server
-sudo mkdir kmeans
-cd kmeans
+sudo mkdir kmeans; cd kmeans
 sudo nano ui.R
 sudo nano server.R
 
