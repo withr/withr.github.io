@@ -18,72 +18,72 @@ Several people asked me if I ever installed Shiny Server on Raspberry Pi (RPi) b
 
   
 ### Prepare your RPi
-  Please go through this [blog](http://withr.me/get-access-to-raspberry-pi-without-screen/) to get your RPi connected to Internet. When your RPi get access to Internet, update it first, then extend its storage space and reboot: 
+Please go through this [blog](http://withr.me/get-access-to-raspberry-pi-without-screen/) to get your RPi connected to Internet. When your RPi get access to Internet, update it first, then extend its storage space and reboot: 
   
-  ```
-  sudo apt-get update
-  sudo raspi-config
+```
+sudo apt-get update
+sudo raspi-config
 
-  ```
+```
   
   
 
 
 ### **Install dependencies and reboot**. 
   
-  ```
-  sudo apt-get install -y gfortran libreadline6-dev libx11-dev libxt-dev libcairo2-dev
-  ```
-  The above installation may use most of RPi's memory, you can simply release the memory by rebooting it.
+```
+sudo apt-get install -y gfortran libreadline6-dev libx11-dev libxt-dev libcairo2-dev
+```
+The above installation may use most of RPi's memory, you can simply release the memory by rebooting it: <code>sudo reboot</code>.
   
   
 ### Install R from source
 To install R using official recommandation for *[Debian] (https://cran.r-project.org/bin/linux/debian/)* will fail. Because for Raspbain (which based on Debian), the defualt *r-base-core* is version 2.15.1-4, while it needs a higher version to install *r-base* under *Wheezy*. The simplest way to install R is install it from source, though it will take more than two hours. You can paste all the following commands into the terminal (don't forget to press "Enter"), then check back after two hours
  
-  ```
-  wget http://cran.rstudio.com/src/base/R-3/R-3.1.2.tar.gz 
-  tar zxvf R-3.1.2.tar.gz; cd R-3.1.2/ 
-  ./configure; make; 
-  sudo make install
-   
-  ```
- After the installation finished, type **R** in the terminal to check if R has been installed successfully.
+```
+wget http://cran.rstudio.com/src/base/R-3/R-3.1.2.tar.gz 
+tar zxvf R-3.1.2.tar.gz; cd R-3.1.2/ 
+./configure; make; 
+sudo make install
+
+```
+After the installation finished, type **R** in the terminal to check if R has been installed successfully.
  
 
   
 ### Install *shiny* package
-  We can't install R packages in R console like what we usrally do. The reason is RPi has a small memory which is not enough to conduct such kind of installation. Instead, we can install them from their sources. The *shiny* package has several dependent packages, and we need to install them first before installing *shiny*. Download them first: 
+We can't install R packages in R console like what we usrally do. The reason is RPi has a small memory which is not enough to conduct such kind of installation. Instead, we can install them from their sources. The *shiny* package has several dependent packages, and we need to install them first before installing *shiny*. Download them first: 
   
-  ```
-  wget https://cran.r-project.org/src/contrib/Rcpp_0.12.0.tar.gz
-  wget https://cran.r-project.org/src/contrib/httpuv_1.3.3.tar.gz
-  wget https://cran.r-project.org/src/contrib/mime_0.3.tar.gz
-  wget https://cran.r-project.org/src/contrib/jsonlite_0.9.16.tar.gz
-  wget https://cran.r-project.org/src/contrib/digest_0.6.8.tar.gz
-  wget https://cran.r-project.org/src/contrib/htmltools_0.2.6.tar.gz
-  wget https://cran.r-project.org/src/contrib/xtable_1.7-4.tar.gz
-  wget https://cran.r-project.org/src/contrib/R6_2.1.0.tar.gz
-  wget https://cran.r-project.org/src/contrib/Cairo_1.5-8.tar.gz
-  wget https://cran.r-project.org/src/contrib/shiny_0.12.1.tar.gz
-   
-  ```
+```
+wget https://cran.r-project.org/src/contrib/Rcpp_0.12.0.tar.gz
+wget https://cran.r-project.org/src/contrib/httpuv_1.3.3.tar.gz
+wget https://cran.r-project.org/src/contrib/mime_0.3.tar.gz
+wget https://cran.r-project.org/src/contrib/jsonlite_0.9.16.tar.gz
+wget https://cran.r-project.org/src/contrib/digest_0.6.8.tar.gz
+wget https://cran.r-project.org/src/contrib/htmltools_0.2.6.tar.gz
+wget https://cran.r-project.org/src/contrib/xtable_1.7-4.tar.gz
+wget https://cran.r-project.org/src/contrib/R6_2.1.0.tar.gz
+wget https://cran.r-project.org/src/contrib/Cairo_1.5-8.tar.gz
+wget https://cran.r-project.org/src/contrib/shiny_0.12.1.tar.gz
+ 
+```
   Install above packages from command line:
   
-  ```
-   sudo R CMD INSTALL Rcpp_0.12.0.tar.gz
-   sudo R CMD INSTALL httpuv_1.3.3.tar.gz
-   sudo R CMD INSTALL mime_0.3.tar.gz
-   sudo R CMD INSTALL jsonlite_0.9.16.tar.gz
-   sudo R CMD INSTALL digest_0.6.8.tar.gz
-   sudo R CMD INSTALL htmltools_0.2.6.tar.gz
-   sudo R CMD INSTALL xtable_1.7-4.tar.gz
-   sudo R CMD INSTALL R6_2.1.0.tar.gz
-   sudo R CMD INSTALL Cairo_1.5-8.tar.gz
-   sudo R CMD INSTALL shiny_0.12.1.tar.gz 
-    
-  ```
+```
+ sudo R CMD INSTALL Rcpp_0.12.0.tar.gz
+ sudo R CMD INSTALL httpuv_1.3.3.tar.gz
+ sudo R CMD INSTALL mime_0.3.tar.gz
+ sudo R CMD INSTALL jsonlite_0.9.16.tar.gz
+ sudo R CMD INSTALL digest_0.6.8.tar.gz
+ sudo R CMD INSTALL htmltools_0.2.6.tar.gz
+ sudo R CMD INSTALL xtable_1.7-4.tar.gz
+ sudo R CMD INSTALL R6_2.1.0.tar.gz
+ sudo R CMD INSTALL Cairo_1.5-8.tar.gz
+ sudo R CMD INSTALL shiny_0.12.1.tar.gz 
   
-  To check whether the *shiny* package was installed successfully, we can simply load the package in R console: <code>library(shiny)</code>.
+```
+
+To check whether the *shiny* package was installed successfully, we can simply load the package in R console: <code>library(shiny)</code>.
 
   
 ### Install cmake 
@@ -144,7 +144,7 @@ sudo shiny-server
 
 ```
 
-Now open your web browser and type: RPi-IP:3838 in its address input. 
+Now open your web browser and type: <code>RPi-IP</code>:3838 in its address input. 
 ### Good luck!
   
   
