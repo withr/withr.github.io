@@ -16,7 +16,7 @@ Several people asked me if I ever installed Shiny Server on Raspberry Pi (RPi) b
 
 #### Note: the installing process may take up to 10 hours and to open a shiny application may take up to 30 seconds!
 
-### Devinces needed
+### Devices needed
 Besides the Raspberry Pi (B+) and a 5V2A micro USB power cable, you need also the following devices: 
 
   - A Micro SD card (I just have a 32GB card and I didn't test smaller ones)
@@ -47,8 +47,8 @@ To install R using official recommandation for *[Debian] (https://cran.r-project
   
   ```
   sudo apt-get install -y gfortran libreadline6-dev libx11-dev libxt-dev libcairo2-dev
-  sudo reboot
   ```
+  The above installation may used most of the memory, you can simply release the memory by rebooting you RPi.
   
   
  - **Install R**. You can paste all the following commands into the terminal, then check back after two hours.
@@ -57,7 +57,7 @@ To install R using official recommandation for *[Debian] (https://cran.r-project
   wget http://cran.rstudio.com/src/base/R-3/R-3.1.2.tar.gz 
   tar zxvf R-3.1.2.tar.gz; cd R-3.1.2/ 
   ./configure; make; 
-  sudo make install R
+  sudo make install
   
   ```
  After the installation finished, type **R** in the terminal to check if R has been installed successfully.
@@ -71,6 +71,7 @@ To install R using official recommandation for *[Debian] (https://cran.r-project
   wget https://cran.r-project.org/src/contrib/Rcpp_0.12.0.tar.gz
   wget https://cran.r-project.org/src/contrib/httpuv_1.3.3.tar.gz
   wget https://cran.r-project.org/src/contrib/mime_0.3.tar.gz
+  wget https://cran.r-project.org/src/contrib/jsonlite_0.9.16.tar.gz
   wget https://cran.r-project.org/src/contrib/digest_0.6.8.tar.gz
   wget https://cran.r-project.org/src/contrib/htmltools_0.2.6.tar.gz
   wget https://cran.r-project.org/src/contrib/xtable_1.7-4.tar.gz
@@ -85,6 +86,7 @@ To install R using official recommandation for *[Debian] (https://cran.r-project
    sudo R CMD INSTALL Rcpp_0.12.0.tar.gz
    sudo R CMD INSTALL httpuv_1.3.3.tar.gz
    sudo R CMD INSTALL mime_0.3.tar.gz
+   sudo R CMD INSTALL jsonlite_0.9.16.tar.gz
    sudo R CMD INSTALL digest_0.6.8.tar.gz
    sudo R CMD INSTALL htmltools_0.2.6.tar.gz
    sudo R CMD INSTALL xtable_1.7-4.tar.gz
