@@ -54,6 +54,7 @@ After the installation finished, type **R** in the terminal to check if R has be
 We can't install R packages in R console like what we usrally do. The reason is RPi has a small memory which is not enough to conduct such kind of installation. Instead, we can install them from their sources. The *shiny* package has several dependent packages, and we need to install them first before installing *shiny*. Download them first: 
   
 ```
+cd
 wget https://cran.r-project.org/src/contrib/Rcpp_0.12.0.tar.gz
 wget https://cran.r-project.org/src/contrib/httpuv_1.3.3.tar.gz
 wget https://cran.r-project.org/src/contrib/mime_0.3.tar.gz
@@ -102,6 +103,7 @@ sudo make install
 Just follow the instruction on RStudio's offical [website](https://github.com/rstudio/shiny-server/wiki/Building-Shiny-Server-from-Source), and the installation may take up to three hours! 
 
 ```
+cd
 git clone https://github.com/rstudio/shiny-server.git
 cd shiny-server; DIR=`pwd`; PATH=$DIR/bin:$PATH
 mkdir tmp; cd tmp; PYTHON=`which python`
@@ -118,6 +120,7 @@ sudo make install
 Prepare a system for Shiny Server's default configuration.
 
 ```
+cd
 sudo ln -s /usr/local/shiny-server/bin/shiny-server /usr/bin/shiny-server
 sudo useradd -r -m shiny
 sudo mkdir -p /var/log/shiny-server
@@ -145,14 +148,15 @@ Create a demo shiny-app in **/srv/shiny-server**, like [this](http://shiny.rstud
 ```
 cd /srv/shiny-server
 sudo mkdir kmeans; cd kmeans
-sudo nano ui.R
-sudo nano server.R
+sudo wget http://withr.me/misc/kmeans/ui.R
+sudo wget http://withr.me/misc/kmeans/server.R
 
 ```
 ### Change file permissions to let Shiny Server get access.
 
 
 ```
+cd
 sudo chmod 777 -R /srv
 sudo shiny-server
 
