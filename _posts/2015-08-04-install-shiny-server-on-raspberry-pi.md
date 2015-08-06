@@ -100,7 +100,7 @@ sudo make install
 ```
   
 ### Install Shiny-server
-Just follow the instruction on RStudio's offical [website](https://github.com/rstudio/shiny-server/wiki/Building-Shiny-Server-from-Source): 
+Just follow the instruction on RStudio's offical [website](https://github.com/rstudio/shiny-server/wiki/Building-Shiny-Server-from-Source), and the installation may take up to three hours! 
 
 ```
 git clone https://github.com/rstudio/shiny-server.git
@@ -114,6 +114,21 @@ sudo make install
  
 
 ```
+
+### Post-Install
+Prepare a system for Shiny Server's default configuration.
+
+```
+sudo ln -s /usr/local/shiny-server/bin/shiny-server /usr/bin/shiny-server
+sudo useradd -r -m shiny
+sudo mkdir -p /var/log/shiny-server
+sudo mkdir -p /srv/shiny-server
+sudo mkdir -p /var/lib/shiny-server
+sudo chown shiny /var/log/shiny-server
+sudo mkdir -p /etc/shiny-server
+
+```
+
 
 ### Create the Shiny Server configure file
 
@@ -129,8 +144,7 @@ Create a demo shiny-app in **/srv/shiny-server**, like [this](http://shiny.rstud
   
 ```
 cd /srv/shiny-server
-sudo mkdir kmeans
-cd kmeans
+sudo mkdir kmeans; cd kmeans
 sudo nano ui.R
 sudo nano server.R
 
@@ -139,7 +153,7 @@ sudo nano server.R
 
 
 ```
-sudo chmod 766 -R /srv
+sudo chmod 777 -R /srv
 sudo shiny-server
 
 ```
