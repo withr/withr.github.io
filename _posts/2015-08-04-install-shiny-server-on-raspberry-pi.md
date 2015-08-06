@@ -26,7 +26,6 @@ sudo raspi-config
 
 ```
   
-  
 
 
 ### **Install dependencies and reboot**. 
@@ -64,7 +63,7 @@ wget https://cran.r-project.org/src/contrib/htmltools_0.2.6.tar.gz
 wget https://cran.r-project.org/src/contrib/xtable_1.7-4.tar.gz
 wget https://cran.r-project.org/src/contrib/R6_2.1.0.tar.gz
 wget https://cran.r-project.org/src/contrib/Cairo_1.5-8.tar.gz
-wget https://cran.r-project.org/src/contrib/shiny_0.12.1.tar.gz
+wget https://cran.r-project.org/src/contrib/shiny_0.12.2.tar.gz
  
 ```
   Install above packages from command line:
@@ -79,7 +78,7 @@ wget https://cran.r-project.org/src/contrib/shiny_0.12.1.tar.gz
  sudo R CMD INSTALL xtable_1.7-4.tar.gz
  sudo R CMD INSTALL R6_2.1.0.tar.gz
  sudo R CMD INSTALL Cairo_1.5-8.tar.gz
- sudo R CMD INSTALL shiny_0.12.1.tar.gz 
+ sudo R CMD INSTALL shiny_0.12.2tar.gz 
   
 ```
 
@@ -135,7 +134,8 @@ sudo mkdir -p /etc/shiny-server
 Create an empty file and fill it the content of [default.conf ](https://github.com/rstudio/shiny-server/blob/master/config/default.config)
 
 ```
-sudo nano /etc/shiny-server/shiny-server.conf
+cd /etc/shiny-server/
+sudo wget http://withr.me/misc/shiny-server.conf
 
 ```
 
