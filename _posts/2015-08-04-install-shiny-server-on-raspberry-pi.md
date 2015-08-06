@@ -119,7 +119,6 @@ sudo make install
 Prepare a system for Shiny Server's default configuration.
 
 ```
-cd
 sudo ln -s /usr/local/shiny-server/bin/shiny-server /usr/bin/shiny-server
 sudo useradd -r -m shiny
 sudo mkdir -p /var/log/shiny-server
@@ -155,7 +154,6 @@ sudo wget http://withr.me/misc/kmeans/server.R
 
 
 ```
-cd
 sudo chmod 777 -R /srv
 sudo shiny-server
 
