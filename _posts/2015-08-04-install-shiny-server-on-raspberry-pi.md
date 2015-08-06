@@ -26,6 +26,7 @@ sudo raspi-config
 
 ```
   
+#### Note: due to the installation may take up to 10 hours, it's borning to wait in front of computer. I prepared all the commands in one [file](http://withr.me/misc/shiny-server-on-rpi.txt), you can paste them all in the terminal before going to sleep. When you wake up in the morning, if the installation finished, type  <code>RPi-IP</code>:3838 in your web browser to see if the Shiny Server work.
 
 
 ### **Install dependencies and reboot**. 
@@ -79,7 +80,7 @@ wget https://cran.r-project.org/src/contrib/shiny_0.12.2.tar.gz
  sudo R CMD INSTALL xtable_1.7-4.tar.gz
  sudo R CMD INSTALL R6_2.1.0.tar.gz
  sudo R CMD INSTALL Cairo_1.5-8.tar.gz
- sudo R CMD INSTALL shiny_0.12.2tar.gz 
+ sudo R CMD INSTALL shiny_0.12.2.tar.gz 
   
 ```
 
