@@ -33,7 +33,7 @@ sudo apt-get install -y gfortran libreadline6-dev libx11-dev libxt-dev libcairo2
 ```
 The above installation may use most of RPi's memory, you can simply release the memory by rebooting it: <code>sudo reboot</code>.
   
-#### Note: due to the installation may take up to 10 hours, it's borning to wait in front of computer. I prepared all the commands in one [file](http://withr.me/misc/shiny-server-on-rpi.txt), you can paste them all in the terminal before going to sleep. When you wake up in the morning, if the installation finished, type  <code>RPi-IP</code>:3838 in your web browser to see if the Shiny Server works.  
+#### Note: due to the installation may take up to 10 hours, it's borning to wait in front of computer. I prepared all the commands in one [file](http://withr.me/misc/shiny-server-on-rpi.txt), you can paste them all in the terminal before going to sleep. When you wake up in the morning, if the installation finished, type  <code>RPi-IP</code>:3838 in your web browser to see if the Shiny Server works. Or, you can follow the following steps.  
   
 ### Install R from source
 To install R using official recommandation for *[Debian] (https://cran.r-project.org/bin/linux/debian/)* will fail. Because for Raspbain (which based on Debian), the defualt *r-base-core* is version 2.15.1-4, while it needs a higher version to install *r-base* under *Wheezy*. The simplest way to install R is install it from source, though it will take more than two hours. You can paste all the following commands into the terminal (don't forget to press "Enter"), then check back after two hours
