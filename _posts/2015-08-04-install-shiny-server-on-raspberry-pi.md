@@ -6,7 +6,6 @@ comments: true
 categories: RPi R Shiny
 ---
 
-## Not verified!!
 
 Several people asked me if I ever installed Shiny Server on Raspberry Pi (RPi) because I introduce myself as a "R and Raspberry Pi fan" on my [blogs](http://withr.me/). Though I don't think RPi is suitable to hold a Shiny Server due to its low memory size, but other guys may have some good reason to do so, especially that RPi is getting more and more powerful. So I wrote this step-by-step guide to share my experience. 
 
@@ -25,8 +24,6 @@ sudo apt-get update
 sudo raspi-config
 
 ```
-  
-#### Note: due to the installation may take up to 10 hours, it's borning to wait in front of computer. I prepared all the commands in one [file](http://withr.me/misc/shiny-server-on-rpi.txt), you can paste them all in the terminal before going to sleep. When you wake up in the morning, if the installation finished, type  <code>RPi-IP</code>:3838 in your web browser to see if the Shiny Server work.
 
 
 ### **Install dependencies and reboot**. 
@@ -36,6 +33,7 @@ sudo apt-get install -y gfortran libreadline6-dev libx11-dev libxt-dev libcairo2
 ```
 The above installation may use most of RPi's memory, you can simply release the memory by rebooting it: <code>sudo reboot</code>.
   
+#### Note: due to the installation may take up to 10 hours, it's borning to wait in front of computer. I prepared all the commands in one [file](http://withr.me/misc/shiny-server-on-rpi.txt), you can paste them all in the terminal before going to sleep. When you wake up in the morning, if the installation finished, type  <code>RPi-IP</code>:3838 in your web browser to see if the Shiny Server works.  
   
 ### Install R from source
 To install R using official recommandation for *[Debian] (https://cran.r-project.org/bin/linux/debian/)* will fail. Because for Raspbain (which based on Debian), the defualt *r-base-core* is version 2.15.1-4, while it needs a higher version to install *r-base* under *Wheezy*. The simplest way to install R is install it from source, though it will take more than two hours. You can paste all the following commands into the terminal (don't forget to press "Enter"), then check back after two hours
