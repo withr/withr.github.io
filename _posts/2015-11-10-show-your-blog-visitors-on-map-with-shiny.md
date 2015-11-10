@@ -106,4 +106,4 @@ leaflet:
 ```
 
 
-All scripts (and a demo data) can be downloaded [here](misc/visitMap.zip). Remember backup the “leaflet” folder before replacing it with the one in download folder (“www/leaflet”).
+All scripts (and a demo data) can be downloaded [here](/misc/visitMap.zip). Remember backup the “leaflet” folder before replacing it with the one in download folder (“www/leaflet”).
