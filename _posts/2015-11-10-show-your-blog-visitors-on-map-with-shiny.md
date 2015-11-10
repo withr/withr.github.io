@@ -6,11 +6,11 @@ comments: true
 categories: R Shiny
 ---
 
-You may have interest about who visited your web blog, and it’s better if you can see them on map, like this [one](http://188.166.116.72/visitMap/). In this blog, I will show you how to create a shiny-app to track your visitors.
+You may have interest about who visited your web site, and it’s better if you can see them on map, like this [one](http://188.166.116.72/visitMap/). In this blog, I will show you how to create a such kind of shiny-app to track your visitors.
 
-A shiny-app is a web site which allow users to interactively input and get output. The idea of creating a visitor-tracking shiny-app is: when users open your blog site, a shiny-app will also be opened (which can be embedded in your web site), and once the shiny-app be opened, it will save user’s IP related information to your server.
+A shiny-app is a web site which allow users to interactively input and get output. The idea of creating a visitor-tracking shiny-app is: when users open your blog site, a shiny-app will also be opened (**which can be embedded in your web site**), and once the shiny-app be opened, it will save user’s IP related information to your server.
 
-The JavaScript code for getting the IP related information:
+JavaScript code for getting the IP related information:
 
 ```
 $(document).ready(function(){
@@ -28,7 +28,7 @@ $(document).ready(function(){
 });
 
 ```
-Where “#log” is a textInput input of shiny for storing the IP related information. 
+Where **#log** is a *textInput* input of shiny for storing the IP related information. 
 
 The following part in above is used to get the IP related information and store it into “#log”, and tell shiny-app that the value of “#log” has changed. So, we can write some code in “server.R” to save the value of “#log” into server.
 
@@ -38,7 +38,7 @@ The following part in above is used to get the IP related information and store 
       L.trigger("change");
     }, "jsonp");
 ```
-And the following part was used to stop continue fetching IP information:
+And the following part is used to stop continue fetching IP information:
 
 ```
     if(L.val().length > 0) {
@@ -48,6 +48,19 @@ And the following part was used to stop continue fetching IP information:
 
 
 ### In server.R
+
+The code for storing IP information: 
+
+
+```
+  observe({
+    msg <- gsub(".*ipInfo", paste(date(), "ipInfo"), input$log)
+    if (nchar(msg) > 20) {
+      write(msg, "www/visitors.txt", append  = TRUE)
+    }  
+  })
+```
+
 
 The code for map: 
 
@@ -67,7 +80,7 @@ The code for map:
   })
 
 ```
-where “Map$addParams(cluster = Points)” creates an object called “spec.cluster”. We need to add the following JavaScript code to show the cluster points.
+where **Map$addParams(cluster = Points)** creates an object called “spec.cluster”. We need to add the following JavaScript code at the end of **/usr/local/lib/R/site-library/rCharts/libraries/leaflet/layouts/chart.html** to show the cluster points.
 
 ```
  if (spec.cluster != undefined) {
@@ -83,13 +96,15 @@ where “Map$addParams(cluster = Points)” creates an object called “spec.clu
     }
 ```
 
-We also need include some JavaScript libraries needed into “/usr/local/lib/R/site-library/rCharts/libraries/leaflet/external”, they are: 
+We also need include some JavaScript libraries needed into **/usr/local/lib/R/site-library/rCharts/libraries/leaflet/external**, they are: 
 
-MarkerCluster.css
-MarkerCluster.Default.css
-leaflet.markercluster-src.js
+- MarkerCluster.css
 
-To include above libraries, we need to modify the file “/usr/local/lib/R/site-library/rCharts/libraries/leaflet/config.yml” as: 
+- MarkerCluster.Default.css
+
+- leaflet.markercluster-src.js
+
+To include above libraries, we need to modify the file **/usr/local/lib/R/site-library/rCharts/libraries/leaflet/config.yml** as: 
 
 ```
 leaflet:
@@ -106,4 +121,4 @@ leaflet:
 ```
 
 
-All scripts (and a demo data) can be downloaded [here](/misc/visitMap.zip). Remember backup the “leaflet” folder before replacing it with the one in download folder (“www/leaflet”).
+All scripts (includes demo data) can be downloaded [here](/misc/visitMap.zip). **Remember** backup the *leaflet* folder before replacing it with the one in download folder (*www/leaflet*).
