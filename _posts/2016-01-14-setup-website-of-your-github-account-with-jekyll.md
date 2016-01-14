@@ -32,7 +32,7 @@ ssh-keygen
 
 ## Fork Jekyll to your Github account. 
 
-Log onto your Github account, and find the Jekyll [repository]()https://github.com/jekyll/jekyll). Fork it to your account, and rename the repository to: **yourgithubusername.github.io**
+Log onto your Github account, and find the Jekyll [repository](https://github.com/jekyll/jekyll). Fork it to your account, and rename the repository to: **yourgithubusername.github.io**
 
 
 ## Install Ruby
