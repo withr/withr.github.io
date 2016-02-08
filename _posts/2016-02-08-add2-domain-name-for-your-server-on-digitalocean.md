@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Data fetch infomation extraction web application all in R!"
+title: "Data fetch, infomation extraction and web application: all in R!"
 date: 2016-02-08 10:31
 comments: true
 categories: 
