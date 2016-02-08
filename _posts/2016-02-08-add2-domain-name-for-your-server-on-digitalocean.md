@@ -1,10 +1,11 @@
 ---
 layout: post
-title: "Data fetch infomation extraction web application all in R!"
-date: 2016-02-08 10:40
+title: "Add2 domain name (host by Godaddy) for your server on DigitalOcean"
+date: 2016-02-01 10:31
 comments: true
-categories: R Shiny
+categories: 
 ---
+
 
 
 I bought a domain name from Godaddy long time ago. I thought to configure a domain name will take some time, that's the excuse why I didn't use it until now (shame on me).  Now I have to link my server to the domain name, and I found it's very easy. So I post the steps here, in case I need it in future. 
