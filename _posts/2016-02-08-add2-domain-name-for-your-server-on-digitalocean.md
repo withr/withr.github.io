@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Add2 domain name (host by Godaddy) for your server on DigitalOcean"
-date: 2016-02-01 10:31
+title: "Data fetch infomation extraction web application all in R!"
+date: 2016-02-08 10:31
 comments: true
 categories: 
 ---
