@@ -3,40 +3,28 @@ layout: post
 title: "Data fetch, infomation extraction and web application: all in R!"
 date: 2016-02-08 10:31
 comments: true
-categories: 
+categories: R Shiny
 ---
 
 
 
-I bought a domain name from Godaddy long time ago. I thought to configure a domain name will take some time, that's the excuse why I didn't use it until now (shame on me).  Now I have to link my server to the domain name, and I found it's very easy. So I post the steps here, in case I need it in future. 
+Several years ago, I created a web page to show the exam scores of schools in Norway on Google Map. The original intention of creating that web page is to help us avoid the area where the schools' score are low when we want to change our apartment. Recent days, I found many people have intresting of this kind information. So, I created a [web-app](http://shinyapps.me/NationalTest5/) for that purpose with R. In case somebody want to do the similar work, I wrote the steps how I created the web-app. You can modify some of my codes to create the app you needed.
 
-Two steps in short: **add DigitalOcean domain servers to the domain name (you bought) on Godaddy, and add domain name (you bought) to your droplet on DigitalOcean**.
+## Step 1: fetch data from internet. 
 
-### 1. Add DigitalOcean domain servers to Godaddy
+**Note**, if you have got your data ready, just skip this step.
 
-
-Log onto your Godaddy account, and choose the domain name you want to link to your DigitalOcean droplet. Choose "Manage" of **Nameservers**.
-
-![]( /images/DG_domain/screenshot-dcc.godaddy.com 2016-02-01 10-17-44.png )
-
-Add DigitalOcean domain servers as shown in following picture.
-
-![]( /images/DG_domain/screenshot-dcc.godaddy.com 2016-02-01 10-10-15.png )
+The exam scores data can be found in [https://skoleporten.udir.no](https://skoleporten.udir.no/rapportvisning/grunnskole/laeringsresultater/nasjonale-proever-5-trinn/nasjonalt?enhetsid=00&vurderingsomrade=11&underomrade=50&skoletype=0&skoletypemenuid=0&sammenstilling=1). We can see there are 4 figures, and what I have interesting is the percentage of the students fall into to level 3 (high) for each subject. There is an option allow you to download the data of the figures mannually, but I don't want to do that mannually, so I downloaded the source of this page and found the the figure's data was stored in JSON format. JSON format array can be easily converted into **list** class of R, which is much easier to mannage for me. The page contains the average scores of whole Norway, and we need to find all schools' URLs. By inspecting the elements of the page, we can find the there are 19 fylkes (counties), see the following screenshot: 
 
 
-### 2. Add domain name to DigitalOcean
+![]( /images/NationalTest5/screenshot-skoleporten.udir.no 2016-02-08 10-00-49.png )
 
 
-Go to your DigitalOcean account, select **Add a Domain**.
-
-![]( /images/DG_domain/screenshot-cloud.digitalocean.com 2016-02-01 09-59-55.png )
+If we click one fylke, we can find some schools inside that fylke, but not all. However, if you inspect the elements of the page again, we can see all the rest schools were also listed, but weren't shown.
 
 
-Add the domain name you bought. 
+![]( /images/NationalTest5/screenshot-skoleporten.udir.no 2016-02-08 10-07-45.png )
 
-![]( /images/DG_domain/screenshot-cloud.digitalocean.com 2016-02-01 10-01-17.png )
 
-Done! Type your domain in the URL address of a web browser to check. 
-
-**Note**, it may take some time for the DNS to propagate!
+So, we can get all schools' URLs and download their pages. The following is the R codes for downloading all schools' pages.
 
