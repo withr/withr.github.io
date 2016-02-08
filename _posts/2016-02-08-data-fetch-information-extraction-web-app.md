@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Data fetch --> infomation extraction --> web application: all in R!"
+title: "Data fetch, infomation extraction, web application: all in R!"
 date: 2016-02-08 10:40
 comments: true
 categories: R Shiny
