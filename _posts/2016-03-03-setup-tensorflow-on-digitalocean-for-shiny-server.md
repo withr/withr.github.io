@@ -3,7 +3,7 @@ layout: post
 title: "Setup TensorFlow on DigitalOcean for Shiny server"
 date: 2016-03-03 14:24
 comments: true
-categories: R Shiny TensorFlow
+categories: R Shiny
 ---
 
 
@@ -89,14 +89,5 @@ If you can see message, like:
 You have completed the installation!
 
 A [shiny-app](http://188.166.116.72:3838/tf_ImageClassify/) was created according to the codes of [Yuki Katoh](http://opiateforthemass.es/articles/mini-ai-app-using-tensorflow-and-shiny/). 
-
-
-
-
-
-
-
-
-
 
 
