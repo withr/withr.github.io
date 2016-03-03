@@ -44,7 +44,6 @@ sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
 
 ```
 sudo apt-get install pkg-config zip g++ zlib1g-dev unzip
-
 ```
 
 + Install Bazel
@@ -63,7 +62,6 @@ sudo apt-get install python-numpy swig python-dev
 
 cd tensorflow
 ./configure
-
 ```
 
 ### Test the installation
@@ -72,7 +70,6 @@ Navigate to directory *imagenet* under tensorflow.
 
 ```
 cd tensorflow/tensorflow/models/image/imagenet/
- 
 ```
 
 There is a Python script called "classify_image.py", which is used to recoganize image. Run the following command:
@@ -83,7 +80,6 @@ sudo python classify_image.py
 
 If you can see message, like: 
 
-
 >giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca (score = 0.89233)
 >indri, indris, Indri indri, Indri brevicaudatus (score = 0.00859)
 >lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens (score = 0.00264)
@@ -92,7 +88,7 @@ If you can see message, like:
 
 You have completed the installation!
 
-
+A [shiny-app](http://188.166.116.72:3838/tf_ImageClassify/) was created according to the codes of [Yuki Katoh](http://opiateforthemass.es/articles/mini-ai-app-using-tensorflow-and-shiny/). 
 
 
 
