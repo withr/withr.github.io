@@ -7,5 +7,5 @@ categories:
 ---
 
 
-![]( /images/Cluster/RPiShelf.png )
+![](/images/Cluster/RPiShelf.png)
 
