@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Build a Compact Raspberry Pi cluster assemble"
+title: "build compact rpi cluster assemble"
 date: 2016-04-20 16:10
 comments: true
 categories: 
