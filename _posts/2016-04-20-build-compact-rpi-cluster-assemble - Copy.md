@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Setup TensorFlow on DigitalOcean for Shiny server"
+title: "build-compact-rpi-cluster-assemble"
 date: 2016-03-03 14:24
 comments: true
 categories: R Shiny
