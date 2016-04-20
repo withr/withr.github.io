@@ -1,93 +1,57 @@
 ---
 layout: post
-title: "Setup TensorFlow on DigitalOcean for Shiny server"
-date: 2016-03-03 14:24
+title: "Build a Compact Raspberry Pi 3 cluster (part 1) assemble"
+date: 2016-04-20 16:10
 comments: true
-categories: R Shiny
+categories: RPi Big-data
 ---
 
 
-TensorFlow's official website presented different ways to install [TensorFlow](https://www.tensorflow.org/versions/r0.7/get_started/os_setup.html#configure-tensorflows-canonical-view-of-cuda-libraries). I tried the **pip install**, and after several times fail, finially I can pass the *test your installation*. However, when I try to run the tutorial of [Image Recognition](https://www.tensorflow.org/versions/r0.7/tutorials/image_recognition/index.html), I can't find the **imagenet** directory under *models/image*. After searching for a while, I got the [words](https://github.com/tensorflow/tensorflow/issues/463): **Most of the example sources are no longer in the pip package ...**. So, I decided to install it from source (github). 
 
-### Step 1: install pip.
+Shopping list: 
 
-When installing from source you will build a pip wheel that you then install using pip. 
+- 4 x [Raspberry Pi 3 (model B)](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.CGJIep&id=527525039334&_u=kah4vl98525)
+- 4 x [SanDisk Micro SD cards (64G C10)](https://detail.tmall.com/item.htm?id=42352368230&spm=a1z09.2.0.0.CGJIep&_u=kah4vl91de6&sku_properties=5919063:6536025)
+- 4 x [Micro USB power cables](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.CGJIep&id=45454260322&_u=kah4vl98d59)
+- 1 x [6-port USB power hub (5v12A)](https://item.taobao.com/item.htm?spm=a1z09.2.0.0.CGJIep&id=520123544343&_u=kah4vl959a9)
+- 1 x [5-port network switch (hub)](https://detail.tmall.com/item.htm?id=522092553896&spm=a1z09.2.0.0.CGJIep&_u=kah4vl917f5)
+- 1 x [Stacked Acrylic Case](https://item.taobao.com/item.htm?spm=a230r.1.14.39.w7a7cT&id=530438010654&ns=1&abbucket=9)
+- 4 x Ethernet cables (I made them myself)
 
-```
-sudo apt-get install python-pip python-dev
-```
 
-### Step 2: Clone TensorFlow repository
+The RPi 3 consumes more power than it’s predecessor due to it includes WiFi and Bluetooth. The official suggest of power supply is no less than 800mA, but to run it safely, it’s recommended to use a 2.5A USB charger! A USB charger with one port and the maximum output current is 2.5A is common, like iPad’s charger, but a 4-ports USB charger, all ports with maximum output current 2.5A is very rare. I spent a lot time, and finally found this cheap yet meet the requirement USB power hub. It has 6 USB ports, and maximum output current can reach to 12A (the seller said 10A is stable,while 12A can’t last long ). 
 
-```
-git clone --recurse-submodules https://github.com/tensorflow/tensorflow
-```
+![]( /images/Cluster/usbPowerHub.jpg )
 
-### Step 3: Install [Bazel](http://bazel.io/)
+The two extra USB ports can be used to supply a fan and the network switch (hub), they consume around 0.7A together. 
 
-+ Install JDK 8
+You can buy the stacked Acrylic case from a web shop, however, I designed mine because I feel the space between two layers should be bigger. Here is the Acrylic layer (3mm) I designed, you can download the [dwg](/images/Cluster/RPiShelf.dwg) document, and ask [somebody](https://store.taobao.com/shop/view_shop.htm?spm=a1z09.2.0.0.CGJIep&user_number_id=42034200) who has a laser cutter to make them (5x) for you.  
 
-```
-sudo add-apt-repository ppa:webupd8team/java
-sudo apt-get update
-sudo apt-get install oracle-java8-installer
-```
+![]( /images/Cluster/RPiShelf.png )
 
-If encount error message: *GPG error: http://cran.uib.no trusty/ Release: The following signatures couldn't be verified because the public key is not available: NO_PUBKEY 51716619E084DAB9* when running <code>sudo apt-get update</code>, run the following command to replace the key with the one that is displayed in the error message ([more](http://askubuntu.com/questions/20725/gpg-error-the-following-signatures-couldnt-be-verified-because-the-public-key
-)). 
 
-```
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 51716619E084DAB9
-```
+My stacked shelf also need the following bolts and nuts:
 
-+ Install required packages
+- 25 x [Nylon bolt (M2.5x6)](https://detail.tmall.com/item.htm?id=523889606915&spm=a1z09.2.0.0.KobEgd&_u=kah4vl98b5d)
+- 25 x [Nylon pillar (M2.5x5+6)](https://detail.tmall.com/item.htm?id=23328004099&spm=a1z09.2.0.0.KobEgd&_u=kah4vl91bef)
+- 25 x [Nylon nut (M2.5)](https://detail.tmall.com/item.htm?spm=a1z10.5-b.w4011-2672328351.146.ZFnr4Z&id=43513624091&rn=9bd37717e40e72e78b1b04b51ee957a2&abbucket=13)
+- 4 x [Copper pillar (M3X5+6)](https://detail.tmall.com/item.htm?id=15597886091&spm=a1z09.2.0.0.KobEgd&_u=kah4vl905e7)
+- 16 x [Copper pillar (M3X25+6)](https://detail.tmall.com/item.htm?id=15597886091&spm=a1z09.2.0.0.KobEgd&_u=kah4vl905e7)
+- 4 x [Copper nut (M3)](https://detail.tmall.com/item.htm?id=22079879856&spm=a1z09.2.0.0.KobEgd&_u=kah4vl92b20)
 
-```
-sudo apt-get install pkg-config zip g++ zlib1g-dev unzip
-```
 
-+ Install Bazel
+The assemble is quite easy, I think you can understand by looking at the following pictures: 
 
-```
-wget https://github.com/bazelbuild/bazel/releases/download/0.2.0/bazel-0.2.0-installer-linux-x86_64.sh
-chmod +x bazel-0.2.0-installer-linux-x86_64.sh
-./bazel-0.2.0-installer-linux-x86_64.sh --user
-export PATH="$PATH:$HOME/bin"
-```
+![]( /images/Cluster/20160418_220058-1.jpg )
 
-### Step 4: Install other dependencies and configure the installation
+![]( /images/Cluster/20160418_221029-1.jpg )
 
-```
-sudo apt-get install python-numpy swig python-dev
+![]( /images/Cluster/20160418_222309-1.jpg )
 
-cd tensorflow
-./configure
-```
+![]( /images/Cluster/20160419_232027-1.jpg )
 
-### Test the installation
+![]( /images/Cluster/20160419_232051-1.jpg )
 
-Navigate to directory *imagenet* under tensorflow.
-
-```
-cd tensorflow/tensorflow/models/image/imagenet/
-```
-
-There is a Python script called "classify_image.py", which is used to recoganize image. Run the following command:
-
-```
-sudo python classify_image.py
-```
-
-If you can see message, like: 
-
->giant panda, panda, panda bear, coon bear, Ailuropoda melanoleuca (score = 0.89233)
->indri, indris, Indri indri, Indri brevicaudatus (score = 0.00859)
->lesser panda, red panda, panda, bear cat, cat bear, Ailurus fulgens (score = 0.00264)
->custard apple (score = 0.00141)
->earthstar (score = 0.00107)
-
-You have completed the installation!
-
-A [shiny-app](http://188.166.116.72:3838/tf_ImageClassify/) was created according to the codes of [Yuki Katoh](http://opiateforthemass.es/articles/mini-ai-app-using-tensorflow-and-shiny/). 
+![]( /images/Cluster/20160419_232040-1.jpg )
 
 
