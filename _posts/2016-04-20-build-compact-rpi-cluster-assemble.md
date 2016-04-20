@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Build a Compact Raspberry Pi 3 cluster (part 1): assemble"
+title: "Build a Compact Raspberry Pi 3 cluster (part 2) assemble"
 date: 2016-004-20 16:24
 comments: true
 categories: 
