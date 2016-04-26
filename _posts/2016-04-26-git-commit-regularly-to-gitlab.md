@@ -56,55 +56,55 @@ sudo nano ~/.gitignore
 For example, if I want to ignore all .RData files on my computer, I add ".RData" into **~/.gitignore**. More information can get [here](https://help.github.com/articles/ignoring-files/)
 
 ### Step 4: git commit & origin master
+
 Link the project's repository of GitLab to git, so git knows where to push the commits. 
 
 
-´´´
+```
 git remote add origin ssh://git@gitlab.kreftregisteret.no/huti/myproject.git
-´´´
+```
+
 
 Now, let's push our first commit: 
 
-
-´´´
+```
 cd /srv/shiny-server/myproject
 git init 
 git add -A
-git commit -m “First commit”
+git commit -m "First commit"
 git push -u origin master
-´´´
+```
 
 ### Step 5: commit automatically
 We can create a bash file, and let it run periodically, if there are any changes, the project will be committed, and pushed to GitLab. 
 The bash file (“~/myproject.sh”) will look like this: 
 
-´´´bash
+```
 #!/bin/bash
 cd /srv/shiny-server/myproject
 git add -A
 git commit -m "daily update"
 git push -u origin master
-´´´
+```
 
 We need to change its mode so it can be executed by bash: 
 
-´´´
+```
 sudo chmod 765 ~/myproject.sh
+```
 
-´´´
 To test if the bash script can be executed, just type the mand in terminal: 
 
 
-´´´
+```
  ~/myproject.sh
-
-´´´
+```
 
 Then we add an event to run the bash script periodically by adding a line to */etc/crontab*: 
 
-´´´
+```
 sudo nano /etc/crontab
 01 18  *  *  * root  /home/huti/myproject.sh
-´´´
+```
 
 The above command let the bash script run very day at 18:01. Note, due to if there is no changes, or modification, nothing will be pushed to GitLab, so don’t worry that the repository will be too messy. 
