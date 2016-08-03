@@ -23,12 +23,14 @@ I bought a VIVO X7Plus recently (2016-07-30) when I was in China. However, due t
 
 ## Step 3: 运行“谷歌安装器”。
 
-成功后，用谷歌商店下载Gmail会提示错误，不能下载 (无法下载“Gmail”，请重试。 错误代码[DF-DLA-15])。
+
 ![]( /images/vivo/120510.png )
 
 ![]( /images/vivo/121602.png )
 
 ![]( /images/vivo/121725.png )
+
+成功后，用谷歌商店下载Gmail会提示错误，不能下载 (无法下载“Gmail”，请重试。 错误代码[DF-DLA-15])。
 
 ![]( /images/vivo/121743.png )
 
