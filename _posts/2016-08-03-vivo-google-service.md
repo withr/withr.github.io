@@ -1,9 +1,9 @@
 ---
 layout: post
-title: "Install Google serivces on Vivo X7 Plus/在vivo x7上安装谷歌各项服务"
+title: "Install Google serivces on Vivo X7 Plus(在vivo x7上安装谷歌各项服务)"
 date: 2016-08-03 14:24
-comments: true
-categories: R Shiny
+comments: false
+
 ---
 
 
@@ -18,4 +18,5 @@ categories: R Shiny
 打开“谷歌商店”，会提示输入账户信息。信息核对成功后，就可以下载gmail了，当然像是youtube什么的也可以下载了。打开gmail，就可以查看邮件。
 关闭或者重启一下手机，查看一下这些软件是否依然可用。
 
+![]( /images/cpu_4.jpg )
 
