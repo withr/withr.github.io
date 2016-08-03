@@ -6,12 +6,11 @@ comments: true
 categories: R Shiny
 ---
 
-
+I bought a VIVO X7Plus recently (2016-07-30) when I was in China. However, due to in China, I can't use Gmail, so I didn't setup my Gmail. When I back to Norway, and try to use Gmail, which I have used 10 years, I encountered a lot problems. I searched and tried many solutions, like root the mobile and movie some files, and never got lucky. After spending many hours, finally, I found one simple solution, so I would like share the method here, so people who encountered same problem can save several hours of their lives.
 
 
 最近（2016-07-30）买了个VIVO X7plus，因为在国内没法访问Gmail所以也没有下载设置。等回到了挪威发现怎么也设置不好谷歌的各种服务。我尝试了许多方法，比如获取root权限，移动某个文件夹啊什么的，都没有成功。经过了多次试错后终于找到了一种简单的解决方案，特此分享，希望有同样问题的朋友不要走太多的弯路。
 
-<!--more-->
 
 
 ## Step 1: 恢复出厂设置。
