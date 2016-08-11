@@ -16,6 +16,7 @@ ifconfig
 
 You will see that “wlan0” has no IP address. Then you need edit the content of **/etc/wpa_supplicant/wpa_supplicant.conf** as the following: 
 
+
 ```
 ctrl_interface=/var/run/wpa_supplicant
 network={
@@ -27,12 +28,12 @@ network={
       password="your password"
    }
 
-
 ```
 
 If any item you don’t know, like the “ca_cert”, just comments that line by place "#" in the beginning of that line.
 
 ### Step 2: edit the config of wlan0 in **/etc/network/intefaces** to: 
+
 
 ```
 iface wlan0 inet dhcp
