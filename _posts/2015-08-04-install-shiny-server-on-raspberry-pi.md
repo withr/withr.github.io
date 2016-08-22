@@ -54,16 +54,16 @@ We can't install R packages in R console like what we usrally do. The reason is 
   
 ```
 cd
-wget https://cran.r-project.org/src/contrib/Rcpp_0.12.0.tar.gz
-wget https://cran.r-project.org/src/contrib/httpuv_1.3.3.tar.gz
-wget https://cran.r-project.org/src/contrib/mime_0.3.tar.gz
-wget https://cran.r-project.org/src/contrib/jsonlite_0.9.16.tar.gz
-wget https://cran.r-project.org/src/contrib/digest_0.6.8.tar.gz
-wget https://cran.r-project.org/src/contrib/htmltools_0.2.6.tar.gz
-wget https://cran.r-project.org/src/contrib/xtable_1.7-4.tar.gz
-wget https://cran.r-project.org/src/contrib/R6_2.1.0.tar.gz
-wget https://cran.r-project.org/src/contrib/Cairo_1.5-8.tar.gz
-wget https://cran.r-project.org/src/contrib/shiny_0.12.2.tar.gz
+wget https://cran.r-project.org/src/contrib/Archive/Rcpp/Rcpp_0.12.0.tar.gz
+wget https://cran.r-project.org/src/contrib/Archive/httpuv/httpuv_1.3.3.tar.gz
+wget https://cran.r-project.org/src/contrib/Archive/mime/mime_0.3.tar.gz
+wget https://cran.r-project.org/src/contrib/Archive/jsonlite/jsonlite_0.9.16.tar.gz
+wget https://cran.r-project.org/src/contrib/Archive/digest/digest_0.6.8.tar.gz
+wget https://cran.r-project.org/src/contrib/Archive/htmltools/htmltools_0.2.6.tar.gz
+wget https://cran.r-project.org/src/contrib/Archive/xtable/xtable_1.7-4.tar.gz
+wget https://cran.r-project.org/src/contrib/Archive/R6/R6_2.1.0.tar.gz
+wget https://cran.r-project.org/src/contrib/Archive/Cairo/Cairo_1.5-8.tar.gz
+wget https://cran.r-project.org/src/contrib/Archive/shiny/shiny_0.12.2.tar.gz
  
 ```
   Install above packages from command line:
