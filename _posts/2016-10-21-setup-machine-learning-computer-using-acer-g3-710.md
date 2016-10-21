@@ -76,6 +76,12 @@ sudo apt-get install -y ubuntu-desktop gnome-panel gnome-settings-daemon metacit
 sudo apt-get install -y vnc4server
 ~~~~
 
+ - Launch the VNC server to test your connection. You will be asked to set password for VNC server.
+
+~~~~
+vncserver :1
+~~~~
+
  - Edit the end of your **~/.vnc/xstartup** file to match the following configuration. This starts the desktop dependencies as background processes upon starting the VNC server:
 
 ~~~~
@@ -98,12 +104,15 @@ metacity &
 nautilus &
 ~~~~
 
-
- - Launch the VNC server to test your connection. You will be asked to set password for VNC server.
-
+ - Close the VNC server and restart it with new arguments which create desktop with higher resolution:
+ 
+ ~~~~
+vncserver kill :1
+vncserver :1 -geometry 1600x1200
 ~~~~
-vncserver :1
-~~~~
+
+
+
 
 ### On client (Mac/Windows) side:
 
@@ -121,7 +130,7 @@ We can let the Ubuntu computer to start VNC server itself by adding a command to
 crontab -e
 ~~~~
 
-Add **@reboot /usr/bin/vncserver :1** to the bottom of above file, save and exit. 
+Add **@reboot /usr/bin/vncserver :1 -geometry 1600x1200** to the bottom of above file, save and exit. 
 
 Now, restart the computer to test if the remote desktop access still work. 
 
