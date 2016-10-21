@@ -104,10 +104,15 @@ Just follow the instruction on RStudio's offical [website](https://github.com/rs
 ```
 cd
 git clone https://github.com/rstudio/shiny-server.git
-cd shiny-server; DIR=`pwd`; PATH=$DIR/bin:$PATH
-mkdir tmp; cd tmp; PYTHON=`which python`
-cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DPYTHON="$PYTHON" ../
-make; mkdir ../build
+cd shiny-server; 
+DIR=`pwd`; 
+PATH=$DIR/bin:$PATH
+mkdir tmp; 
+cd tmp; 
+PYTHON=`which python`
+sudo cmake -DCMAKE_INSTALL_PREFIX=/usr/local -DPYTHON="$PYTHON" ../
+make; 
+mkdir ../build
 (cd .. && ./bin/npm --python="$PYTHON" rebuild)
 (cd .. && ./bin/node ./ext/node/lib/node_modules/npm/node_modules/node-gyp/bin/node-gyp.js --python="$PYTHON" rebuild)
 sudo make install
