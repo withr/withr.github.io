@@ -106,7 +106,8 @@ nautilus &
 
  - Close the VNC server and restart it with new arguments which create desktop with higher resolution:
  
- ~~~~
+
+~~~~
 vncserver kill :1
 vncserver :1 -geometry 1600x1200
 ~~~~
