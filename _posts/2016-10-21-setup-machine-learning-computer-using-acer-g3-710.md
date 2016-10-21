@@ -104,7 +104,7 @@ metacity &
 nautilus &
 ~~~~
 
- - Close the VNC server and restart it with new arguments which create desktop with higher resolution:
+ - Close the VNC server and restart it with new arguments which creates higher resolution desktop:
  
 
 ~~~~
