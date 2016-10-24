@@ -159,7 +159,7 @@ cd tensorflow;
 ~~~~
 
 
- - The lastest version may has problem, but the following version works:
+ - The lastest version may has problem, but the following version works([ref](https://github.com/tensorflow/tensorflow/issues/4319)):
  
 ~~~~ 
 git reset --hard ec7f37e40fed
