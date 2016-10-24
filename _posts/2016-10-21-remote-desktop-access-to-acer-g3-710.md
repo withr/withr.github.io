@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Setup a Machine Learning computer using Acer G3-710"
+title: "Remote Desktop Access to my Acer G3-710"
 date: 2016-10-21 15:18
 comments: true
 categories: ML
