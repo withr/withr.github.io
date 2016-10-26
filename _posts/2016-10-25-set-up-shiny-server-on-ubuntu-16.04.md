@@ -71,7 +71,7 @@ Installation of Shiny Server finished!
 
 
 ~~~~
-sudo apt-get install -y libcurl4-openssl-dev  libssl-dev libxml2-dev
+sudo apt-get install -y libcurl4-openssl-dev  libssl-dev libxml2-dev libcairo-dev
 ~~~~
 
 where **libcurl4-openssl-dev** may needed in installing R package "RCurl", **libssl-dev** may needed in installing R package "devtools", and **libxml2-dev** may needed in installing R package "XML". 
@@ -84,6 +84,26 @@ where **libcurl4-openssl-dev** may needed in installing R package "RCurl", **lib
 sudo apt-get install -y default-jdk
 export LD_LIBRARY_PATH=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/
 sudo R CMD javareconf  
+~~~~
+
+- Setup default path of R packages to be installed. When install R packages, I suggest to install them at “/usr/local/lib/R/site-library”. However, the default library path is not that one, but is,  like: */home/usrname/R/x86_64-pc-linux-gnu-library/3.2/*. If you use this one as the default, you may encouter problem when you open a shiny-app: **ERROR: An error has occurred. Check your logs or contact the app author for clarification.** or **Disconnected from Server** or **HTTP 500 Internal Server Error**. That's because shiny-server can't load libraries from the above path. We can change **/usr/lib/R/etc/Renviron** to set it as the default one by commentting the line: **R_LIBS_USER=${R_LIBS_USER-‘~/R/x86_64-pc-linux-gnu-library/3.2’} **
+
+~~~~
+sudo nano /usr/lib/R/etc/Renviron
+~~~~
+
+Now, let’s check the default library path in R:
+
+~~~~
+> .libPaths()
+[1] "/usr/local/lib/R/site-library" "/usr/lib/R/site-library"
+[3] "/usr/lib/R/library"
+~~~~
+
+By default, path  "/usr/local/lib/R/site-library" is not allowed to write in from RStudio, we need to change the access permission like the following: 
+
+~~~~
+sudo chmod 777 /usr/local/lib/R/site-library
 ~~~~
 
 
