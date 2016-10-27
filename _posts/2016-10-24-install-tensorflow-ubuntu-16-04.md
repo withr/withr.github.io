@@ -51,7 +51,7 @@ cd; sudo rm -R *
 
 ## Install CUDA and cuDNN.
 
- - Copy the downloaded CUDA & cuDNN to your home directory.
+ - **Copy** the downloaded CUDA & cuDNN to your home directory.
 You can use Cyderduck (Mac) or WinSCP (Windows):
  
 ~~~~
@@ -59,7 +59,7 @@ cuda_8.0.44_linux.run
 cudnn-8.0-linux-x64-v5.1.tgz
 ~~~~
 
- - Turn off Secure Boot. 
+ - **Turn off Secure Boot**. 
 To install CUDA (which belong to the third-party drivers) requires turning off Secure Boot. 
 
 The following command will ask you to create a password which will be asked to type when you try to turn off Secure Boot.
@@ -93,7 +93,7 @@ To avoid this problem, the simplest method is:
 >3. Reboot computer using sudo reboot, then access it again
 
 
- - Instal CUDA & cuDNN. Now, you can instal CUDA using following command: 
+ - **Instal CUDA & cuDNN**. Now, you can instal CUDA using following command: 
 
 ~~~~ 
 sudo sh cuda_8.0.44_linux-run
@@ -122,26 +122,26 @@ Note: **default-jdk** in Ubuntu 16.04 means OpenJDK 8, which will be used to com
 
 ## Install Bazel: 
 
- - Download the source code of bazel form github.
+ - **Download the source code** of bazel form github.
 
 ~~~~ 
 git clone https://github.com/bazelbuild/bazel.git
 cd bazel; 
 ~~~~ 
 
- - The master version may have some problem when build TensorFlow from source. I am not sure, but the following version works ([ref](https://github.com/tensorflow/tensorflow/issues/4368)): 
+ - The **master version** may have some problem when build TensorFlow from source. I am not sure, but the following version works ([ref](https://github.com/tensorflow/tensorflow/issues/4368)): 
 
 ~~~~ 
 git reset --hard 3e5ac9db
 ~~~~ 
 
- - Compile souce files into binary file:
+ - **Compile souce files** into binary file:
  
 ~~~~
  ./compile.sh
 ~~~~
 
- - Copy the binary bazel to a directory on the PATH, so we can use command bazel anywhere:
+ - Copy the binary bazel to a directory on the **PATH**, so we can use command bazel anywhere:
  
 ~~~~
 sudo cp output/bazel /usr/local/bin
@@ -151,7 +151,7 @@ sudo cp output/bazel /usr/local/bin
 
 ## Install TensorFlow
 
- - Download source code
+ - **Download source code**
  
 ~~~~
 git clone https://github.com/tensorflow/tensorflow
@@ -166,7 +166,7 @@ git reset --hard ec7f37e40fed
 ~~~~
 
 
- - Configure tensorflow for installation:
+ - **Configure tensorflow** for installation:
 
 ~~~~ 
 ./configure
@@ -187,7 +187,7 @@ export LC_ALL=en_US.UTF-8
 ~~~~ 
 
 
- - Now we can install safely: 
+ - **Now we can install safely**: 
  
 ~~~~ 
 bazel build -c opt --config=cuda //tensorflow/tools/pip_package:build_pip_package
@@ -209,7 +209,7 @@ add **LD_LIBRARY_PATH=/usr/local/cuda/lib64** into */etc/environment*.
 
 
 
- - Run MNIST example
+ - **Run MNIST example**
  
 ~~~~  
 cd tensorflow/models/image/mnist

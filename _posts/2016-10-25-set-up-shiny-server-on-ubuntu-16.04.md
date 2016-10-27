@@ -28,7 +28,7 @@ sudo apt-get upgrade
 
  Before installing Shiny Server, we need to install R and the Shiny package first. 
 
-- To install the latest version of R, we need to add the CRAN repository to our system's sources list: **/etc/apt/sources.list**. 
+- **To install the latest version of R**, we need to add the CRAN repository to our system's sources list: **/etc/apt/sources.list**. 
 
 ~~~~
 sudo nano /etc/apt/sources.list
@@ -36,7 +36,7 @@ sudo nano /etc/apt/sources.list
 
 Add <code>deb http://cran.uib.no/bin/linux/ubuntu xenial/</code> to its end, and save the modification. Where *cran.uib.no* is the CRAN mirror for Norway (so you may need to change it to the mirror suitable for you) and **xenial** is the version name for Ubuntu 16.04.
 
-- Install R using the following command: 
+- **Install R using the following command**: 
 
 ~~~~
 sudo apt-get install -y r-base
@@ -44,7 +44,7 @@ sudo apt-get install -y r-base
 
 This process would take one minute. 
 
-- Install the **Shiny** R package.
+- **Install the **Shiny** R package**
 
 ~~~~
 sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')\""
@@ -52,7 +52,7 @@ sudo su - -c "R -e \"install.packages('shiny', repos='http://cran.rstudio.com/')
 
 This process could take one and half minute, because many dependent packages were also installed. 
 
-- Install Shiny Server
+- **Install Shiny Server**
 
 ~~~~
 sudo apt-get install -y gdebi-core
@@ -67,7 +67,7 @@ Installation of Shiny Server finished!
 
 ## Install R packages. 
 
- - Before starting to install R packages using install.packages() under R, we need to install several dependencies or environment first.
+ - Before starting to install R packages using install.packages() under R, we need to install several **dependencies or environment** first.
 
 
 ~~~~
@@ -86,7 +86,7 @@ export LD_LIBRARY_PATH=/usr/lib/jvm/java-8-openjdk-amd64/jre/lib/amd64/server/
 sudo R CMD javareconf  
 ~~~~
 
-- Setup default path of R packages to be installed. When install R packages, I suggest to install them at “/usr/local/lib/R/site-library”. However, the default library path is not that one, but is,  like: */home/usrname/R/x86_64-pc-linux-gnu-library/3.2/*. If you use this one as the default, you may encouter problem when you open a shiny-app: **ERROR: An error has occurred. Check your logs or contact the app author for clarification.** or **Disconnected from Server** or **HTTP 500 Internal Server Error**. That's because shiny-server can't load libraries from the above path. We can change **/usr/lib/R/etc/Renviron** to set it as the default one by commentting the line: **R_LIBS_USER=${R_LIBS_USER-‘~/R/x86_64-pc-linux-gnu-library/3.2’} **
+- **Setup default path of R packages to be installed** When install R packages, I suggest to install them at “/usr/local/lib/R/site-library”. However, the default library path is not that one, but is,  like: */home/usrname/R/x86_64-pc-linux-gnu-library/3.2/*. If you use this one as the default, you may encouter problem when you open a shiny-app: **ERROR: An error has occurred. Check your logs or contact the app author for clarification.** or **Disconnected from Server** or **HTTP 500 Internal Server Error**. That's because shiny-server can't load libraries from the above path. We can change **/usr/lib/R/etc/Renviron** to set it as the default one by commentting the line: **R_LIBS_USER=${R_LIBS_USER-‘~/R/x86_64-pc-linux-gnu-library/3.2’} **
 
 ~~~~
 sudo nano /usr/lib/R/etc/Renviron
@@ -108,7 +108,7 @@ sudo chmod 777 /usr/local/lib/R/site-library
 
 
 
-- Install the following R packages:
+- **Install the following R packages**
 
 ~~~~
 install.packages(c('RJDBC', 'XLConnect', 'devtools', 'RJSONIO'))
