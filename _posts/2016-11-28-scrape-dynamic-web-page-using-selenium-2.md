@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Scrape dynamic web page (Google Group forum) using Selenium (2)"
-date: 2016-10-28 15:27
+date: 2016-10-28 16:27
 comments: true
 categories: Linux
 ---
