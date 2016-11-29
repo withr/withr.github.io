@@ -42,7 +42,7 @@ Above command download and unzip **deckodriver**. The third line command move th
 
 ## Step 3: install Xvfb & PyVirtualDisplay
 
-**Xvfb** is a software that simulates a display doing everything in memory and not showing any screen output, while **PyVirtualDisplay** is a Python wrapper for Xvfb. It allows you to easily work with a virtual display in Python(ref)[http://scraping.pro/use-headless-firefox-scraping-linux/]. Use the following command to install them. 
+**Xvfb** is a software that simulates a display doing everything in memory and not showing any screen output, while **PyVirtualDisplay** is a Python wrapper for Xvfb. It allows you to easily work with a virtual display in Python[ref](http://scraping.pro/use-headless-firefox-scraping-linux/). Use the following command to install them. 
 
 
 ~~~~

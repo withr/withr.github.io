@@ -60,7 +60,7 @@ for i in range(0, len(HTML)):
             thread = {"author": author, "date":date, "content":content}
             threads.append(thread)        
     else:
-        with open(wd + 'log_extract.txt', "w") as log:
+        with open(wd + 'log_extract.txt', "a") as log:
             log.write(f + "\n")
             log.close()
         print "\nError: file " + f + " wasn't downloaded completely!"

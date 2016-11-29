@@ -95,7 +95,7 @@ while True:
             print "\nAll content loaded!"
             break
 
-with open(wd + 'forum.html', "w") as f:
+with open(wd + 'forum.html', "a") as f:
     f.write(browser.page_source.encode('utf8', 'replace'))
     f.close()
 
