@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Scrape dynamic web page (Google Group forum) using Selenium "
+title: "Scrape dynamic web page (Google Group forum) using Selenium (1)"
 date: 2016-10-28 15:27
 comments: true
 categories: Linux
@@ -133,7 +133,7 @@ for n in range(0, N):
             time.sleep(1)
         ## file_name = time.strftime("%Y%m%d_%H%M%S_")
         file_name = '{:04d}'.format(n+1) + re.sub('^.*/', '_', href)
-        with open(wd + 'topics/' + file_name, "wb") as f:
+        with open(wd + 'topics/' + file_name, "a") as f:
             f.write(browser.page_source.encode('utf8', 'replace'))
             f.close()
         msg = "\rIndex: " + str(n) + "; file: "+ file_name
