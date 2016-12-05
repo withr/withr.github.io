@@ -154,6 +154,7 @@ sudo cp output/bazel /usr/local/bin
  - **Download source code**
  
 ~~~~
+cd;
 git clone https://github.com/tensorflow/tensorflow
 cd tensorflow;
 ~~~~
