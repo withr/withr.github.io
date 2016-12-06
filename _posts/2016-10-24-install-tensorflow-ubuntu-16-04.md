@@ -202,12 +202,15 @@ sudo pip install /tmp/tensorflow_pkg/tensorflow-0.11.0rc1-py2-none-any.whl
  
  > ImportError: libcudart.so.8.0: cannot open shared object file: No such file or directory
 
-add **LD_LIBRARY_PATH=/usr/local/cuda/lib64** into */etc/environment*.
+
 
  run the following command ([ref](https://github.com/NVIDIA/DIGITS/issues/8)): 
  
+~~~~  
+export LD_LIBRARY_PATH=/usr/local/cuda/lib64
+~~~~  
 
-
+or permenantly save to system by adding **LD_LIBRARY_PATH=/usr/local/cuda/lib64** into */etc/environment*.
 
  - **Run MNIST example**
  
