@@ -125,7 +125,7 @@ Note: **default-jdk** in Ubuntu 16.04 means OpenJDK 8, which will be used to com
  - **Download the source code** of bazel form github.
 
 ~~~~ 
-git clone https://github.com/bazelbuild/bazel.git
+cd; git clone https://github.com/bazelbuild/bazel.git
 cd bazel; 
 ~~~~ 
 
