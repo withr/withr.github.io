@@ -94,6 +94,8 @@ sudo nano /usr/lib/R/etc/Renviron
 
 Now, let’s check the default library path in R:
 
+**Note:** another reason when you see **HTTP 500 Internal Server Error** may be that some packages needed in the shiny app were not installed. 
+
 ~~~~
 > .libPaths()
 [1] "/usr/local/lib/R/site-library" "/usr/lib/R/site-library"
@@ -111,7 +113,7 @@ sudo chmod 777 /usr/local/lib/R/site-library
 - **Install the following R packages**
 
 ~~~~
-install.packages(c('RJDBC', 'XLConnect', 'devtools', 'RJSONIO'))
+install.packages(c('RJDBC', 'XLConnect', 'devtools', 'RJSONIO', 'sp', 'png', 'pixmap'))
 require(devtools)
 install_github('rCharts', 'ramnathv')
 ~~~~
@@ -125,3 +127,7 @@ sudo gdebi rstudio-server-0.99.903-i386.deb
 ~~~~
 
 The RStudio-server will run on port 8787 of your server's IP address. Use your user name and password to log onto it. 
+
+
+**Note to myself:** to make sure all my leaflet shiny apps work, copy the "rCharts/leaflet" to replace the one installed, and change the ownship to same as other libraries. 
+ 
