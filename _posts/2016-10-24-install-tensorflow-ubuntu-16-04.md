@@ -186,6 +186,16 @@ export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8 
 ~~~~ 
 
+or, edit the locale file: */etc/default/locale* to: 
+
+~~~~ 
+LANGUAGE=en_US.UTF-8 
+LANG=en_US.UTF-8 
+LC_ALL=en_US.UTF-8 
+~~~~ 
+and then restart the computer. 
+
+
 
  - **Now we can install safely**: 
  
@@ -210,7 +220,7 @@ sudo pip install /tmp/tensorflow_pkg/tensorflow-0.11.0rc1-py2-none-any.whl
 export LD_LIBRARY_PATH=/usr/local/cuda/lib64
 ~~~~  
 
-or permenantly save to system by adding **LD_LIBRARY_PATH=/usr/local/cuda/lib64** into */etc/environment*.
+or permenantly save to system by adding **LD_LIBRARY_PATH=/usr/local/cuda/lib64** into */etc/environment*. (will work after restart the computer)
 
  - **Run MNIST example**
  

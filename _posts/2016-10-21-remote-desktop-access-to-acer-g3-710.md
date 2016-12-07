@@ -122,6 +122,10 @@ vncserver :1 -geometry 1600x1200
 - Open *RealVNC Viewer* and type **IP:1** in VNC Server field. Where the IP is the ip address of your Ubuntu computer. You will be asked to type the password for VNC server, then the Ubuntu’s desktop should come up.
 
 
+**If you got a gray screen with mouse as "X", then the easiest solution is using another port, like: <code> vncserver :2 -geometry 1600x1200</code>**
+
+
+
 ## Starting Ubuntu VNC Server on Boot
 
 We can let the Ubuntu computer to start VNC server itself by adding a command to crontab. Open your *crontab* and edit. You will asked to choose a text editor, please choose nano.
