@@ -129,5 +129,5 @@ sudo gdebi rstudio-server-0.99.903-i386.deb
 The RStudio-server will run on port 8787 of your server's IP address. Use your user name and password to log onto it. 
 
 
-**Note to myself:** to make sure all my leaflet shiny apps work, copy the "rCharts/leaflet" to replace the one installed, and change the ownship to same as other libraries. 
+**Note to myself:** to make sure all my leaflet shiny apps work, copy the "rCharts/leaflet" to replace the one installed, and change the ownship to same as other libraries, so that those files can be visited by www-data users. 
  

@@ -225,7 +225,7 @@ python convolutional.py
 
 ![]( /images/acer/mnist.png)
 
-See, 100 iteration used only 4.8ms, and the whole process used 45 seconds, that's fast!
+See, one iteration used only 4.8ms, and the whole process used 45 seconds, it's fast!
 
 
 
