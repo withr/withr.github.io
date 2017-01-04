@@ -6,4 +6,4 @@ comments: true
 categories: Linux
 ---
 
-The official instruction for install MongoDB on Ubuntu system can be found [here](https://docs.mongodb.com/getting-started/shell/tutorial/install-mongodb-on-ubuntu/). 
+The official instruction for install MongoDB on Ubuntu system can be found 
