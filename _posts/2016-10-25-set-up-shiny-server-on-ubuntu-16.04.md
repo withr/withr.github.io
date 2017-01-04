@@ -113,7 +113,7 @@ sudo chmod 777 /usr/local/lib/R/site-library
 - **Install the following R packages**
 
 ~~~~
-install.packages(c('RJDBC', 'XLConnect', 'devtools', 'RJSONIO', 'sp', 'png', 'pixmap'))
+install.packages(c('RJDBC', 'XLConnect', 'devtools', 'RJSONIO', 'sp', 'png', 'pixmap', 'mapdata', 'maptools', 'maps', 'rgeos'))
 require(devtools)
 install_github('rCharts', 'ramnathv')
 ~~~~
