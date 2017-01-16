@@ -17,7 +17,6 @@ https://adressesok.posten.no/nb/addresses/search?q=postnummer%3A0192&view=list, 
 
 
 
-
 >User-Agent: *
 >Disallow: /*?
 >
@@ -58,7 +57,7 @@ def write_log(postnr, msg):
         l.close()
     print  "\rPostnumber: " + postnr + " " + msg + "!"
 
-~~~~  
+
     
     
 
@@ -106,7 +105,9 @@ def download_page(postnr):
 
 
             
-            
+~~~~  
+
+~~~~        
             
 ## postnr_all
 p1 = int(sys.argv[1])
@@ -137,4 +138,4 @@ id = 1
 for postnr in postnr_todownload:
     download_page(postnr)
 
-
+~~~~  
