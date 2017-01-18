@@ -7,7 +7,7 @@ categories: Linux
 ---
 
 
-I used to scrape web pages on my SDD, because I think saving files on SDD will be fater than on HDD, as many posts said. Recently, I have to save files on my HDD, because the SDD is full, and I feel the saving process is slower, but I have no idea how much it slower. So, I designed a test script to compare the time consumed for saving files on SDD vs HDD. To conduct the test faster, I use the library multiprocessing. Many posts said the max number of processes should not bigger than the total number of CPU cores, but what will happen if I set a bigger number of processes? 
+I used to scrape web pages on my SDD, because I think saving files on SDD will be fater than on HDD, like many posts said. Recently, I have to save files on my HDD, because the SDD is full, and I feel the saving process is slower, but I have no idea how much it slower. Therefore, I designed a test script to compare the time consumed for saving files on SDD vs HDD. To conduct the test faster, I use the library multiprocessing. Many posts said the max number of processes should no bigger than the total number of CPU cores, but what will happen, if I set a bigger number of processes? 
 
 
 Here is the result: 
@@ -16,9 +16,9 @@ Here is the result:
 
 From above figure, we can say:
 
-1. Time consumming of saving files on HDD is longer than on SDD when max number of processess smaller than the number of CPU cores, but faster when max number of processess bigger than the number of CPU cores. 
+1. Time consuming of saving files on HDD is longer than on SDD when max number of processes smaller than the number of CPU cores, but faster when max number of processes bigger than the number of CPU cores (strange!). 
 
-2. Increase the max number of processess will always make the process faster, but the most efficient range are less than two times of the number of CPU cores. So, set the max number of processes to two times of number of CPU cores will make sense.
+2. Increase the max number of processes will always make the process faster, but the most efficient range are less than two times of the number of CPU cores. Therefore, set the max number of processes to 16 on a 8-core CPU will make sense.
 
 3. The difference on HDD and SDD is not very big. 
 
