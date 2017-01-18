@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "multiprocessing: max number of processes vs cores of CPU"
+title: "multiprocessing max number of processes vs cores of CPU"
 date: 2017-01-18 09:27
 comments: true
 categories: Linux
