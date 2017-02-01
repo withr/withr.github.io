@@ -49,7 +49,7 @@ apps=`ls "$dir_apps" | grep app_*`
 while true; do
   USERS=99999
   for var2 in $apps; do
-    pid=`sudo lsof | grep ^R | grep "$dir_apps" | awk '{print $2, $9}' | grep $var2'$' |awk '{print $1}' `
+    pid=`sudo lsof | grep ^R | grep $dir_apps | awk '{print $2, $9}' | grep $var2'$' |awk '{print $1}' `
     if [ -z "$pid" ]; then     
       USERS=0
       APP=$var2
@@ -63,7 +63,7 @@ while true; do
     fi 
   done
   echo 'App: '$APP'; Users: '$USERS  
-  echo $APP >  $dir_apps'/min_user'
+  echo $APP >  $dir_apps'min_user'
 done
 ~~~~
 
@@ -72,7 +72,7 @@ Note: the second line in above defined the directory of the shiny-app: **myApp**
 To run above bash script, we need change its access permission first using command: 
 
 ~~~~
-sudo chown 777 /srv/shiny-server/myApp/min_user.sh
+sudo chmod 777 /srv/shiny-server/myApp/min_user.sh
 ~~~~
 
 Moreover, we can add a line to **cron** task, to make sure the script will run automatically after a reboot of the computer.
