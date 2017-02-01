@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "shiny app for CPU bound project"
-date: 2017-01-18 09:27
+date: 2017-02-01 09:47
 comments: true
 categories: shiny
 ---
