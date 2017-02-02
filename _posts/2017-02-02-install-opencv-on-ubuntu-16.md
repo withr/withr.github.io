@@ -37,7 +37,7 @@ cd && wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archiv
 
 ~~~~
 
-## Step 2: In stall & setup python virtual environment
+## Step 2: Install & setup python virtual environment
 
 ~~~~
 echo -e "\nSetup virtual environment..." && sleep 3
