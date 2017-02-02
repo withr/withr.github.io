@@ -7,7 +7,7 @@ categories: opencv
 ---
 
 
-If you want to play computer vision, [opencv](http://opencv.org/) is the most popular tool. However, installing opencv is not like install a normal software, it's more complete, and you may need hours to finish the installation. [Adrian Rosebrock ](http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/) wrote a excellent tutorial on how to install opencv 3.1.0 on Ubuntu 16.04 with explaination for each step. I didn't success by following the steps, however, I successed with installing a newer version: 3.2.0. This post presents three code blocks to help you install opencv with a couple of copy&paste.
+If you want to play computer vision, *[opencv](http://opencv.org/)* is the most popular tool. However, installing opencv is not like install a normal software, it is more complete, and you may need hours to finish the installation. [Adrian Rosebrock ](http://www.pyimagesearch.com/2016/10/24/ubuntu-16-04-how-to-install-opencv/) wrote an excellent tutorial on how to install opencv 3.1.0 on Ubuntu 16.04 with explanation for each step. I did not success by following the steps, however, I succeed with installing a newer version: 3.2.0. This post presents three code blocks to help you install opencv with a couple of copy&paste.
 
 
 ## Step 1: update & upgrade Linux system, install libraries/tools, download opencv/opencv_contrib 
