@@ -10,7 +10,6 @@ categories: Linux
 I need more disk space of my computer, so I bought a 3TB hard disk. I want the new disk to be one partion, so I can easily distinguish it from others. 
 
 
-
 After connecting the hard disk to computer and start the computer, I checked whether the disk was recognized by the computer using command <code>df</code>, and known that the disk was recognized as **/dev/sdc**. 
 
 ![]( /images/wd3t/fdisk_sdc.png )
