@@ -44,7 +44,7 @@ Suppose we want to create a shiny-app called **myApp**.
 ~~~~
 #!/bin/bash
 dir_apps='/srv/shiny-server/myApp/'
-apps=`ls "$dir_apps" | grep app_*`   
+apps=`ls "$dir_apps" | grep app`   
 
 while true; do
   USERS=99999
