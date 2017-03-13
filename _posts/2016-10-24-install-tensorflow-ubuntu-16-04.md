@@ -108,7 +108,7 @@ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 ~~~~ 
 
-
+Rerun above two blocks of codes can fix the bug with error message like "modprobe: FATAL: Module nvidia-uvm not found in directory /lib/modules/4.4.0-64-generic", which generally happen when operation system updated to a new kernal.
 
 ## Install tools using sudo apt-get install. 
 
