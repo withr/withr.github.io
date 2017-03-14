@@ -168,6 +168,7 @@ git reset --hard ec7f37e40fed
 
  - **Configure tensorflow** for installation:
 
+If encount *Error downloading http://zlib.net/zlib-1.2.8.tar.gz*, using this [link](https://github.com/tensorflow/tensorflow/issues/6594) to fix.
 ~~~~ 
 ./configure
 ~~~~ 
