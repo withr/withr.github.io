@@ -96,7 +96,7 @@ To avoid this problem, the simplest method is:
  - **Instal CUDA & cuDNN**. Now, you can instal CUDA using following command: 
 
 ~~~~ 
-sudo sh cuda_8.0.44_linux-run
+sudo sh cuda_8.0.44_linux.run
 ~~~~ 
 
 and install cuDNN: 
