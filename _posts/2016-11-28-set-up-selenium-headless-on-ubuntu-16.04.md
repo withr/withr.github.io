@@ -20,8 +20,9 @@ I spend a lot time to setup the Selenium on my Ubuntu 16.04, but never get succe
 ## Step 1: install selenium
 
 ~~~~
-sudo apt-get install python-pip
-sudo pip install selenium
+//sudo apt-get install python-pip
+//sudo pip install selenium
+sudo apt install python3-selenium 
 ~~~~
 
 
